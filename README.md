@@ -70,24 +70,12 @@ const rudray = {
 ## GitHub Stats
 
 <div align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api?username=rudraymehra&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=70a5fd&icon_color=bf91f3&text_color=c9d1d9&ring_color=70a5fd" />
-    <source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats.vercel.app/api?username=rudraymehra&show_icons=true&theme=default&hide_border=true" />
-    <img width="49%" alt="GitHub Stats" src="https://github-readme-stats.vercel.app/api?username=rudraymehra&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=70a5fd&icon_color=bf91f3&text_color=c9d1d9&ring_color=70a5fd" />
-  </picture>
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://streak-stats.demolab.com?user=rudraymehra&theme=tokyonight&hide_border=true&background=0d1117&ring=70a5fd&fire=bf91f3&currStreakLabel=70a5fd&sideLabels=c9d1d9&dates=555555" />
-    <source media="(prefers-color-scheme: light)" srcset="https://streak-stats.demolab.com?user=rudraymehra&theme=default&hide_border=true" />
-    <img width="49%" alt="Streak Stats" src="https://streak-stats.demolab.com?user=rudraymehra&theme=tokyonight&hide_border=true&background=0d1117&ring=70a5fd&fire=bf91f3&currStreakLabel=70a5fd&sideLabels=c9d1d9&dates=555555" />
-  </picture>
+  <img width="49%" src="https://github-readme-stats.vercel.app/api?username=rudraymehra&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=70a5fd&icon_color=bf91f3&text_color=c9d1d9&ring_color=70a5fd" alt="GitHub Stats" />
+  <img width="49%" src="https://streak-stats.demolab.com?user=rudraymehra&theme=tokyonight&hide_border=true&background=0d1117&ring=70a5fd&fire=bf91f3&currStreakLabel=70a5fd&sideLabels=c9d1d9&dates=555555" alt="Streak Stats" />
 </div>
 
 <div align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=rudraymehra&layout=compact&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=70a5fd&text_color=c9d1d9&langs_count=8" />
-    <source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=rudraymehra&layout=compact&theme=default&hide_border=true&langs_count=8" />
-    <img width="42%" alt="Top Languages" src="https://github-readme-stats.vercel.app/api/top-langs/?username=rudraymehra&layout=compact&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=70a5fd&text_color=c9d1d9&langs_count=8" />
-  </picture>
+  <img width="42%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=rudraymehra&layout=compact&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=70a5fd&text_color=c9d1d9&langs_count=8" alt="Top Languages" />
 </div>
 
 <br/>
