@@ -70,18 +70,18 @@ const rudray = {
 ## GitHub Stats
 
 <div align="center">
-  <img width="49%" src="https://github-readme-stats.vercel.app/api?username=rudraymehra&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=70a5fd&icon_color=bf91f3&text_color=c9d1d9&ring_color=70a5fd" alt="GitHub Stats" />
+  <img width="49%" src="https://github-readme-stats-sigma-five.vercel.app/api?username=rudraymehra&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=70a5fd&icon_color=bf91f3&text_color=c9d1d9&ring_color=70a5fd" alt="GitHub Stats" />
   <img width="49%" src="https://streak-stats.demolab.com?user=rudraymehra&theme=tokyonight&hide_border=true&background=0d1117&ring=70a5fd&fire=bf91f3&currStreakLabel=70a5fd&sideLabels=c9d1d9&dates=555555" alt="Streak Stats" />
 </div>
 
 <div align="center">
-  <img width="42%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=rudraymehra&layout=compact&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=70a5fd&text_color=c9d1d9&langs_count=8" alt="Top Languages" />
+  <img width="42%" src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=rudraymehra&layout=compact&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=70a5fd&text_color=c9d1d9&langs_count=8" alt="Top Languages" />
 </div>
 
 <br/>
 
 <div align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=rudraymehra&theme=algolia&no-frame=true&no-bg=true&column=7&margin-w=10" alt="GitHub Trophies" />
+  <img src="https://github-trophies.vercel.app/?username=rudraymehra&theme=algolia&no-frame=true&no-bg=true&column=7&margin-w=10" alt="GitHub Trophies" />
 </div>
 
 <br/>
@@ -96,19 +96,19 @@ const rudray = {
 
 <div align="center">
   <a href="https://github.com/rudraymehra/HTTP-SERVER">
-    <img width="47%" src="https://github-readme-stats.vercel.app/api/pin/?username=rudraymehra&repo=HTTP-SERVER&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=70a5fd&icon_color=bf91f3&text_color=c9d1d9" alt="HTTP-SERVER" />
+    <img width="47%" src="https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=rudraymehra&repo=HTTP-SERVER&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=70a5fd&icon_color=bf91f3&text_color=c9d1d9" alt="HTTP-SERVER" />
   </a>
   <a href="https://github.com/rudraymehra/InterviewLytics">
-    <img width="47%" src="https://github-readme-stats.vercel.app/api/pin/?username=rudraymehra&repo=InterviewLytics&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=70a5fd&icon_color=bf91f3&text_color=c9d1d9" alt="InterviewLytics" />
+    <img width="47%" src="https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=rudraymehra&repo=InterviewLytics&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=70a5fd&icon_color=bf91f3&text_color=c9d1d9" alt="InterviewLytics" />
   </a>
 </div>
 
 <div align="center">
   <a href="https://github.com/rudraymehra/Amazon_Recommender_System">
-    <img width="47%" src="https://github-readme-stats.vercel.app/api/pin/?username=rudraymehra&repo=Amazon_Recommender_System&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=70a5fd&icon_color=bf91f3&text_color=c9d1d9" alt="Amazon_Recommender_System" />
+    <img width="47%" src="https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=rudraymehra&repo=Amazon_Recommender_System&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=70a5fd&icon_color=bf91f3&text_color=c9d1d9" alt="Amazon_Recommender_System" />
   </a>
   <a href="https://github.com/rudraymehra/RESS-Attrition-Prediction">
-    <img width="47%" src="https://github-readme-stats.vercel.app/api/pin/?username=rudraymehra&repo=RESS-Attrition-Prediction&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=70a5fd&icon_color=bf91f3&text_color=c9d1d9" alt="RESS-Attrition-Prediction" />
+    <img width="47%" src="https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=rudraymehra&repo=RESS-Attrition-Prediction&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=70a5fd&icon_color=bf91f3&text_color=c9d1d9" alt="RESS-Attrition-Prediction" />
   </a>
 </div>
 
