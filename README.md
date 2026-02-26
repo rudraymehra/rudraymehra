@@ -1,4 +1,10 @@
+<!-- README.md for rudraymehra/rudraymehra — GitHub Profile -->
+
+<div align="center">
+
 <img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:1a1b27,100:24283b&height=220&section=header&text=Rudray%20Mehra&fontSize=55&fontColor=70a5fd&fontAlignY=35&animation=twinkling&desc=Building%20things%20that%20think&descSize=18&descColor=bf91f3&descAlignY=55" alt="header" />
+
+</div>
 
 <div align="center">
 
@@ -138,4 +144,3 @@ const rudray = {
 <div align="center">
   <img src="https://komarev.com/ghpvc/?username=rudraymehra&color=70a5fd&style=flat-square&label=Profile+Views" alt="Profile Views" />
 </div>
-
