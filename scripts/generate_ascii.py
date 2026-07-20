@@ -11,6 +11,7 @@ Run standalone to preview in the terminal while tuning config values:
 
 from __future__ import annotations
 
+import math
 from pathlib import Path
 
 import numpy as np
@@ -122,8 +123,22 @@ def remove_small_islands(mask: np.ndarray, min_size: int) -> np.ndarray:
     return mask
 
 
-def sobel_magnitude(arr: np.ndarray) -> np.ndarray:
-    """3x3 Sobel gradient magnitude, normalized to [0, 255]."""
+def unsharp_mask(arr: np.ndarray, amount: float, radius: int = 2) -> np.ndarray:
+    """Boost local contrast: arr + amount * (arr - blur(arr))."""
+    if amount <= 0:
+        return arr
+    blur = arr
+    for axis in (0, 1):  # separable box blur, applied twice ~ gaussian
+        for _ in range(2):
+            p = np.pad(blur, [(radius, radius) if a == axis else (0, 0) for a in (0, 1)], mode="edge")
+            windows = [np.roll(p, -k, axis=axis) for k in range(2 * radius + 1)]
+            blur = np.mean(windows, axis=0)
+            blur = blur[tuple(slice(0, s) for s in arr.shape)]
+    return np.clip(arr + amount * (arr - blur), 0.0, 255.0)
+
+
+def sobel(arr: np.ndarray) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
+    """3x3 Sobel: (magnitude normalized to [0, 255], gx, gy)."""
     p = np.pad(arr, 1, mode="edge")
     gx = (
         (p[:-2, 2:] + 2 * p[1:-1, 2:] + p[2:, 2:])
@@ -135,31 +150,81 @@ def sobel_magnitude(arr: np.ndarray) -> np.ndarray:
     )
     mag = np.hypot(gx, gy)
     peak = float(mag.max())
-    return mag * (255.0 / peak) if peak > 0 else mag
+    if peak > 0:
+        mag = mag * (255.0 / peak)
+    return mag, gx, gy
+
+
+def _edge_glyph(gx: float, gy: float) -> str:
+    """Stroke glyph perpendicular to the gradient direction."""
+    edge_angle = (math.degrees(math.atan2(gy, gx)) + 90.0) % 180.0
+    if edge_angle < 22.5 or edge_angle >= 157.5:
+        return "-"
+    if edge_angle < 67.5:
+        return "/"
+    if edge_angle < 112.5:
+        return "|"
+    return "\\"
+
+
+def _diffuse_errors(val: np.ndarray, mask: np.ndarray, levels: int) -> np.ndarray:
+    """Floyd-Steinberg error diffusion over the glyph-level grid."""
+    val = val.copy()
+    h, w = val.shape
+    top = levels - 1
+    for y in range(h):
+        for x in range(w):
+            if mask[y, x]:
+                continue
+            q = min(max(round(val[y, x]), 0), top)
+            err = val[y, x] - q
+            val[y, x] = q
+            if x + 1 < w:
+                val[y, x + 1] += err * (7 / 16)
+            if y + 1 < h:
+                if x > 0:
+                    val[y + 1, x - 1] += err * (3 / 16)
+                val[y + 1, x] += err * (5 / 16)
+                if x + 1 < w:
+                    val[y + 1, x + 1] += err * (1 / 16)
+    return val
 
 
 def map_to_chars(
     arr: np.ndarray,
     mask: np.ndarray,
-    edges: np.ndarray,
+    edges: tuple[np.ndarray, np.ndarray, np.ndarray],
     params: AsciiParams,
     theme: str,
 ) -> list[str]:
     """Turn the character-grid luminance into fixed-width ASCII rows."""
     ramp = params.ramp(theme)
+    levels = len(ramp)
+    mag, gx, gy = edges
     # gamma > 1 lifts midtones toward the sparse end of the ramp, keeping
     # skin near-blank so only genuinely dark features (hair, eyes, brows,
     # outlines) get ink — the classic hand-drawn ASCII-portrait look.
     lum = (arr / 255.0).clip(0.0, 1.0) ** (1.0 / params.gamma)
-    indices = (lum * len(ramp)).astype(int).clip(0, len(ramp) - 1)
+    val = lum * (levels - 1)
+    if params.dither:
+        val = _diffuse_errors(val, mask, levels)
+    indices = np.round(val).astype(int).clip(0, levels - 1)
+    # Directional strokes replace glyphs only on strong edges in cells that
+    # are not already dark ink, so outlines (jaw, nose, collar) read as pen
+    # strokes without eating into solid regions like hair.
+    stroke_floor = int(levels * 0.45)
     rows: list[str] = []
     for y in range(arr.shape[0]):
         chars = []
         for x in range(arr.shape[1]):
             if mask[y, x]:
                 chars.append(" ")
-            elif params.edge_threshold > 0 and edges[y, x] > params.edge_threshold:
-                chars.append(params.edge_char)
+            elif (
+                params.edge_threshold > 0
+                and mag[y, x] > params.edge_threshold
+                and indices[y, x] >= stroke_floor
+            ):
+                chars.append(_edge_glyph(gx[y, x], gy[y, x]))
             else:
                 chars.append(ramp[indices[y, x]])
         rows.append("".join(chars))
@@ -207,7 +272,8 @@ def generate_ascii(params: AsciiParams, theme: str, base_dir: Path | str = ".") 
     gray, rgb = resize_for_terminal(gray, rgb, params.width, params.char_aspect)
     mask = background_mask(gray, rgb, params.bg_saturation, params.bg_lum_floor)
     mask = remove_small_islands(mask, params.min_region)
-    edges = sobel_magnitude(gray)
+    gray = unsharp_mask(gray, params.sharpen)
+    edges = sobel(gray)
     return _trim_blank_rows(map_to_chars(gray, mask, edges, params, theme))
 
 

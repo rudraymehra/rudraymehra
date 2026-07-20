@@ -46,6 +46,8 @@ class AsciiParams:
     edge_threshold: int
     edge_char: str
     contrast_cutoff: float
+    sharpen: float = 0.0  # unsharp-mask strength; 0 disables
+    dither: bool = False  # Floyd-Steinberg error diffusion
     static_art: str | None = None
 
     def ramp(self, theme: str) -> str:

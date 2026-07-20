@@ -31,11 +31,13 @@
     "bg_saturation": 0.16,
     "bg_lum_floor": 110,
     "min_region": 12,
-    "edge_threshold": 0,
+    "edge_threshold": 80,
     "edge_char": "#",
     "contrast_cutoff": 8,
-    "gamma": 2.2,
-    "static_art": "assets/portrait_ascii.txt"
+    "gamma": 1.9,
+    "static_art": "assets/portrait_ascii.txt",
+    "sharpen": 0.6,
+    "dither": true
   },
   "svg": {
     "canvas_width": 1000,
