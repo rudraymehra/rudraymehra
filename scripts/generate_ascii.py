@@ -290,21 +290,28 @@ def _glyph_bitmaps(chars: str) -> tuple[str, np.ndarray]:
     return "".join(kept), np.stack(bitmaps)
 
 
-def structural_map(
-    darkness: np.ndarray,
-    mask: np.ndarray,
-    ramp: str,
-    rows: int,
-    width: int,
-    density_weight: float = 2.5,
-) -> list[str]:
-    """Pick the best-matching glyph per cell from shape + density scores.
+_GLYPH_POOL = "".join(chr(c) for c in range(32, 127))  # all printable ASCII
+
+
+def glyph_set() -> tuple[str, np.ndarray]:
+    """The full candidate pool rendered to bitmaps (cached per process)."""
+    global _GLYPH_CACHE
+    try:
+        return _GLYPH_CACHE
+    except NameError:
+        _GLYPH_CACHE = _glyph_bitmaps(_GLYPH_POOL)
+        return _GLYPH_CACHE
+
+
+def structural_choose(
+    darkness: np.ndarray, rows: int, width: int, density_weight: float
+) -> np.ndarray:
+    """Best glyph index per cell from shape + density scores.
 
     darkness: hi-res array (rows*gh, width*gw) in [0, 1], 1 = full ink.
-    mask: cell-resolution background mask (rows, width).
     """
     gw, gh = _GLYPH_RASTER
-    chars, glyphs = _glyph_bitmaps(ramp + "/\\|-_=<>^v()[]{}?!;:")
+    _, glyphs = glyph_set()
     densities = glyphs.mean(axis=1)
     dens_scale = float(densities.max()) or 1.0
     densities = densities / dens_scale
@@ -327,16 +334,23 @@ def structural_map(
 
     density_diff = np.abs(target_density[:, None] - densities[None, :])
     score = (1.0 - ncc) + density_weight * density_diff
-    best = score.argmin(axis=1).reshape(rows, width)
+    return score.argmin(axis=1).reshape(rows, width)
 
-    out = []
-    for y in range(rows):
-        out.append(
-            "".join(
-                " " if mask[y, x] else chars[best[y, x]] for x in range(width)
-            )
-        )
-    return out
+
+def structural_map(
+    darkness: np.ndarray,
+    mask: np.ndarray,
+    rows: int,
+    width: int,
+    density_weight: float = 2.5,
+) -> list[str]:
+    """Glyph indices -> masked, fixed-width ASCII rows."""
+    chars, _ = glyph_set()
+    best = structural_choose(darkness, rows, width, density_weight)
+    return [
+        "".join(" " if mask[y, x] else chars[best[y, x]] for x in range(width))
+        for y in range(rows)
+    ]
 
 
 def load_static_art(path: Path) -> list[str]:
@@ -379,7 +393,7 @@ def generate_ascii(params: AsciiParams, theme: str, base_dir: Path | str = ".") 
         )
         hi_arr = unsharp_mask(np.asarray(hi, dtype=np.float32), params.sharpen, radius=gw)
         darkness = 1.0 - (hi_arr / 255.0).clip(0.0, 1.0) ** (1.0 / params.gamma)
-        art = structural_map(darkness, mask, params.ramp(theme), rows_n, width)
+        art = structural_map(darkness, mask, rows_n, width)
         return _trim_blank_rows(art)
 
     cell_gray = unsharp_mask(cell_gray, params.sharpen)

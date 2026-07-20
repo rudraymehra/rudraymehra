@@ -41,6 +41,13 @@ truncated with an ellipsis, so keep them under ~35 characters.
 
 Preview loop while tuning: `python scripts/generate_ascii.py --theme dark`.
 
+Automatic tuning: `python scripts/tune.py` grid-searches `contrast_cutoff`,
+`sharpen`, `gamma`, and the shape/tone weight, scoring each candidate by
+reconstructing the character mosaic and correlating it against the photo
+itself. Copy the winning values into `config.json` — but always eye-check
+the top candidates: past a point the metric rewards over-sharpening that
+looks noisy to a human.
+
 ### Hand-made art override
 
 If `ascii.static_art` points to an existing file (default
