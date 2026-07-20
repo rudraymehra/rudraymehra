@@ -24,7 +24,7 @@
   },
   "ascii": {
     "portrait": "assets/portrait.jpg",
-    "width": 80,
+    "width": 115,
     "char_aspect": 0.5,
     "ramp_dark": "$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\\|()1{}[]?-_+~i!lI;:,\"'`. ",
     "ramp_light": "$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\\|()1{}[]?-_+~i!lI;:,\"'`. ",
@@ -46,7 +46,7 @@
     "column_gap": 30,
     "font_stack": "SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace",
     "cursor_blink": true,
-    "ascii_font_size": 10
+    "ascii_font_size": 7
   },
   "themes": {
     "dark": {
