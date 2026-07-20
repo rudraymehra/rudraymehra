@@ -176,8 +176,29 @@ def _trim_blank_rows(rows: list[str]) -> list[str]:
     return rows[start:end]
 
 
+def load_static_art(path: Path) -> list[str]:
+    """Load hand-made ASCII art, normalized to equal-width printable rows."""
+    rows = [
+        "".join(ch if " " <= ch <= "~" else " " for ch in line.rstrip("\n").replace("\t", "    "))
+        for line in path.read_text(encoding="utf-8").splitlines()
+    ]
+    rows = _trim_blank_rows(rows)
+    if not rows:
+        raise SystemExit(f"static art file is empty: {path}")
+    width = max(len(r) for r in rows)
+    return [r.ljust(width) for r in rows]
+
+
 def generate_ascii(params: AsciiParams, theme: str, base_dir: Path | str = ".") -> list[str]:
-    """Full pipeline: portrait file -> list of equal-width ASCII rows."""
+    """Full pipeline: portrait file -> list of equal-width ASCII rows.
+
+    If `static_art` is configured and the file exists, it wins over the
+    generated portrait — for hand-made or externally sourced art.
+    """
+    if params.static_art:
+        art_path = Path(base_dir) / params.static_art
+        if art_path.is_file():
+            return load_static_art(art_path)
     portrait = Path(base_dir) / params.portrait
     if not portrait.is_file():
         raise SystemExit(f"portrait not found: {portrait}")

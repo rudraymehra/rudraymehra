@@ -163,8 +163,14 @@ def render_svg(ascii_rows: list[str], stats: Stats, config: Config, theme: str) 
     char_w, line_h, pad = svg.char_w, svg.line_h, svg.padding
     width = svg.canvas_width
 
-    col2_x = pad + config.ascii.width * char_w + svg.column_gap
+    art_width = max((len(r) for r in ascii_rows), default=config.ascii.width)
+    col2_x = pad + art_width * char_w + svg.column_gap
     col2_chars = int((width - col2_x - pad) // char_w)
+    if col2_chars < 40:
+        raise SystemExit(
+            f"ASCII art is too wide ({art_width} chars) — the stats column "
+            f"needs at least 40 characters; use art up to ~60 wide"
+        )
     lines = stat_lines(stats, config, col2_chars)
     quote = _daily_quote(config.quotes)
 
@@ -199,7 +205,7 @@ def render_svg(ascii_rows: list[str], stats: Stats, config: Config, theme: str) 
         f'text-anchor="middle">{esc(config.terminal_title)}</text>'
     )
 
-    ascii_length = round(config.ascii.width * char_w, 1)
+    ascii_length = round(art_width * char_w, 1)
     for row, text in enumerate(ascii_rows):
         parts.append(
             f'<text class="ascii" x="{pad}" y="{baseline(row):.1f}" xml:space="preserve" '

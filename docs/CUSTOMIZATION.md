@@ -37,6 +37,15 @@ truncated with an ellipsis, so keep them under ~35 characters.
 
 Preview loop while tuning: `python scripts/generate_ascii.py --theme dark`.
 
+### Hand-made art override
+
+If `ascii.static_art` points to an existing file (default
+`assets/portrait_ascii.txt`), its contents replace the generated portrait
+entirely — use this for hand-drawn or externally sourced ASCII art. Plain
+ASCII only (non-ASCII characters become spaces), up to ~60 characters
+wide; lines are padded to equal width automatically and the layout adapts.
+Delete the file to go back to the generated portrait.
+
 The background remover assumes a studio-style photo: a desaturated,
 reasonably bright backdrop that touches the image borders. For busy
 backgrounds, pre-cut the photo (e.g. macOS "Remove Background" quick

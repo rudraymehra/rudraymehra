@@ -46,6 +46,7 @@ class AsciiParams:
     edge_threshold: int
     edge_char: str
     contrast_cutoff: float
+    static_art: str | None = None
 
     def ramp(self, theme: str) -> str:
         """Character ramp for a theme, sparse -> dense as luminance rises.
