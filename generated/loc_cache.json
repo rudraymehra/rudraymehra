@@ -1,0 +1,173 @@
+{
+  "version": 1,
+  "repos": {
+    "rudraymehra/Recipe-Finder": {
+      "head_oid": "c5ff211185702ac5730ebfd877c14e835ee9d33e",
+      "commits": 3,
+      "additions": 247,
+      "deletions": 4
+    },
+    "rudraymehra/StockMarketPredictor": {
+      "head_oid": "789dcf59758c7e4883a6ed8a52e2371fd8bc0f7c",
+      "commits": 10,
+      "additions": 1246,
+      "deletions": 26
+    },
+    "rudraymehra/gen_chat_bot": {
+      "head_oid": "f654a5618ce3f4ad4f15fe3f603ef46345dd87be",
+      "commits": 2,
+      "additions": 547,
+      "deletions": 1
+    },
+    "rudraymehra/Cafe_Location": {
+      "head_oid": "00bfb4b5f69cacb1e53945489035e17e71f1dba3",
+      "commits": 3,
+      "additions": 1396,
+      "deletions": 1
+    },
+    "rudraymehra/fitness_tracker": {
+      "head_oid": "101fbf462709b4e5975dbc8da7dcb234b73a96a6",
+      "commits": 0,
+      "additions": 0,
+      "deletions": 0
+    },
+    "rudraymehra/RESS-Attrition-Prediction": {
+      "head_oid": "9c269de6b7f33ad20cd4072e750a91627efe1cb8",
+      "commits": 11,
+      "additions": 22585,
+      "deletions": 21482
+    },
+    "rudraymehra/InterviewLytics": {
+      "head_oid": "ec0ad429f5deb43ec0e44c42e56c6ffa4af0725d",
+      "commits": 16,
+      "additions": 29289,
+      "deletions": 22670
+    },
+    "rudraymehra/HTTP-SERVER": {
+      "head_oid": "7b42efd98e9b84d6ffe802a5ad742f5ccf33470d",
+      "commits": 0,
+      "additions": 0,
+      "deletions": 0
+    },
+    "rudraymehra/OverFitted_Minds_RL": {
+      "head_oid": "2e2b2e81c446128ba06f31af8991328ba354319c",
+      "commits": 1,
+      "additions": 8743,
+      "deletions": 0
+    },
+    "rudraymehra/ScholarAi": {
+      "head_oid": "355167bd141f64ca1416a34b80fab492df4afebe",
+      "commits": 0,
+      "additions": 0,
+      "deletions": 0
+    },
+    "rudraymehra/springproj": {
+      "head_oid": "f2f0d1849b885f44a7dc1cd8fd4eacab2444f30a",
+      "commits": 0,
+      "additions": 0,
+      "deletions": 0
+    },
+    "rudraymehra/Rudray-Portfolio-": {
+      "head_oid": "16b15e036dddf3c9c200a6e89501b62385489970",
+      "commits": 3,
+      "additions": 6629,
+      "deletions": 298
+    },
+    "rudraymehra/Springboot-EcommercePlatform": {
+      "head_oid": "f091863f64922beb587ccb0b973dd6c44bcb7b22",
+      "commits": 0,
+      "additions": 0,
+      "deletions": 0
+    },
+    "rudraymehra/Amazon_Recommender_System": {
+      "head_oid": "4aff7e0a4cf9e0e719a894a44dfa7e2466bccc57",
+      "commits": 1,
+      "additions": 1220,
+      "deletions": 0
+    },
+    "rudraymehra/Casino": {
+      "head_oid": "3f97d5d809abb6196505cffd5f5aaf0ea82906ff",
+      "commits": 5,
+      "additions": 2473,
+      "deletions": 910
+    },
+    "rudraymehra/Ghrtham": {
+      "head_oid": "3bfe2664408b850dd9ca0ee0f75d540fd57bbacd",
+      "commits": 2,
+      "additions": 765,
+      "deletions": 227
+    },
+    "rudraymehra/rudraymehra": {
+      "head_oid": "cf3b20203ccf3dd666e9a4461c63a85a270001a2",
+      "commits": 9,
+      "additions": 2107,
+      "deletions": 298
+    },
+    "rudraymehra/AutoTheta": {
+      "head_oid": "49ba09eb789d3c5e8cdf0f3c7d5c92800de6d286",
+      "commits": 28,
+      "additions": 20832,
+      "deletions": 1749
+    },
+    "rudraymehra/Generative_Ai": {
+      "head_oid": "d605d2feaf2c95fd71082e13fe5e472b42f86004",
+      "commits": 5,
+      "additions": 7733,
+      "deletions": 130
+    },
+    "rudraymehra/citepdf": {
+      "head_oid": "8df3c022f8eceee5bccfc4c51ec942bcacfaa191",
+      "commits": 13,
+      "additions": 10876,
+      "deletions": 10
+    },
+    "rudraymehra/AI-CLI-AGENT": {
+      "head_oid": "8cd077370556afef051ecf8eca887c625ca72a5d",
+      "commits": 1,
+      "additions": 429,
+      "deletions": 290
+    },
+    "rudraymehra/pdf-chat-assignment": {
+      "head_oid": "8694a18e582bcfc06080aa8fd7948323356aac3b",
+      "commits": 3,
+      "additions": 277,
+      "deletions": 5
+    },
+    "rudraymehra/reviewbot": {
+      "head_oid": "b82a416bbb9528d41384d6a61a5a8b5cb9c12737",
+      "commits": 20,
+      "additions": 3343,
+      "deletions": 225
+    },
+    "rudraymehra/TypeAhead": {
+      "head_oid": "35b0ce692e3561c849043a6b021114631a0b5d85",
+      "commits": 10,
+      "additions": 3841,
+      "deletions": 9
+    },
+    "rudraymehra/NN_exam": {
+      "head_oid": "e3ee9a2eb9bb05592cc08ecc48a4e806f64a3188",
+      "commits": 1,
+      "additions": 2289,
+      "deletions": 0
+    },
+    "rudraymehra/sentinel": {
+      "head_oid": "d0ed0ab1299cae5dddd60c4912661264a76b2116",
+      "commits": 3,
+      "additions": 763,
+      "deletions": 4
+    },
+    "rudraymehra/groweasy-smart-import": {
+      "head_oid": "41a5443e71ef96a88a45e9c453a1e18c4ae4397d",
+      "commits": 12,
+      "additions": 12035,
+      "deletions": 246
+    },
+    "rudraymehra/KVStash": {
+      "head_oid": "ccdc6a1e41c31d5f64258f21e8297a4dfaaabf67",
+      "commits": 150,
+      "additions": 46497,
+      "deletions": 1701
+    }
+  }
+}

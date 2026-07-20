@@ -1,0 +1,90 @@
+{
+  "username": "rudraymehra",
+  "display_name": "Rudray Mehra",
+  "birthdate": "2006-08-02",
+  "terminal_title": "rudray@github: ~",
+  "fields": {
+    "os": "macOS, Linux",
+    "host": "Scaler Innovation Labs, Bangalore",
+    "kernel": "Full-Stack | AI/ML | Systems",
+    "languages": "TypeScript, Java, Python, Rust",
+    "stack": "React, Next.js, Spring, Node",
+    "learning": "AI/ML Systems, Low-Level Eng",
+    "interests": "HTTP servers from scratch, Hackathons",
+    "contact": [
+      { "key": "Email", "value": "rudraymehra@gmail.com" },
+      { "key": "GitHub", "value": "github.com/rudraymehra" }
+    ]
+  },
+  "ascii": {
+    "portrait": "assets/portrait.jpg",
+    "width": 55,
+    "char_aspect": 0.5,
+    "ramp_dark": " .`'\",:;Il!i~+_-?][}{1)(|\\/tfjrxnuvczXYUJCLQ0OZmwqpdbkhao*#MW&8%B@$",
+    "ramp_light": null,
+    "bg_saturation": 0.16,
+    "bg_lum_floor": 110,
+    "min_region": 12,
+    "edge_threshold": 0,
+    "edge_char": "#",
+    "contrast_cutoff": 2
+  },
+  "svg": {
+    "canvas_width": 1000,
+    "font_size": 14,
+    "line_height": 1.2,
+    "char_width": 0.6,
+    "padding": 24,
+    "column_gap": 30,
+    "font_stack": "SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace",
+    "cursor_blink": true
+  },
+  "themes": {
+    "dark": {
+      "bg": "#0d1117",
+      "border": "#30363d",
+      "titlebar": "#161b22",
+      "title_text": "#8b949e",
+      "text": "#c9d1d9",
+      "accent": "#70a5fd",
+      "key": "#bf91f3",
+      "value": "#c9d1d9",
+      "dots": "#484f58",
+      "ascii_fg": "#70a5fd",
+      "cursor": "#70a5fd",
+      "muted": "#8b949e",
+      "add": "#3fb950",
+      "delete": "#f85149"
+    },
+    "light": {
+      "bg": "#ffffff",
+      "border": "#d0d7de",
+      "titlebar": "#f6f8fa",
+      "title_text": "#57606a",
+      "text": "#1f2328",
+      "accent": "#0969da",
+      "key": "#8250df",
+      "value": "#1f2328",
+      "dots": "#c8ccd1",
+      "ascii_fg": "#0969da",
+      "cursor": "#0969da",
+      "muted": "#57606a",
+      "add": "#1a7f37",
+      "delete": "#cf222e"
+    }
+  },
+  "quotes": [
+    "Talk is cheap. Show me the code.",
+    "Programs must be written for people to read.",
+    "Simplicity is prerequisite for reliability.",
+    "First, solve the problem. Then, write the code.",
+    "Make it work, make it right, make it fast.",
+    "The best error message is the one that never shows up.",
+    "Code is like humor. When you have to explain it, it's bad."
+  ],
+  "loc": {
+    "include_forks": false,
+    "exclude_repos": [],
+    "max_pages_per_repo": 30
+  }
+}

@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="588" viewBox="0 0 1000 588" role="img" aria-label="Rudray Mehra terminal profile">
+<style>text { font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace; font-size: 14px; }
+.title { font-size: 12px; fill: #57606a; }
+.ascii { fill: #0969da; }
+.t { fill: #1f2328; }
+.p { fill: #0969da; }
+.k { fill: #8250df; }
+.d { fill: #c8ccd1; }
+.m { fill: #57606a; font-style: italic; }
+.b { fill: #0969da; font-weight: 600; }
+.a { fill: #1a7f37; }
+.r { fill: #cf222e; }
+.cursor { fill: #0969da; }
+.cursor { animation: blink 1.2s steps(1) infinite; }
+@keyframes blink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .cursor { animation: none; } }</style>
+<defs><clipPath id="frame"><rect x="0.5" y="0.5" width="999" height="587" rx="10"/></clipPath></defs>
+<rect x="0.5" y="0.5" width="999" height="587" rx="10" fill="#ffffff" stroke="#d0d7de"/>
+<rect clip-path="url(#frame)" x="0" y="0" width="1000" height="36" fill="#f6f8fa"/>
+<line x1="0.5" y1="36.5" x2="999.5" y2="36.5" stroke="#d0d7de"/>
+<circle cx="24" cy="18.0" r="6" fill="#ff5f56"/>
+<circle cx="46" cy="18.0" r="6" fill="#ffbd2e"/>
+<circle cx="68" cy="18.0" r="6" fill="#27c93f"/>
+<text class="title" x="500.0" y="22.0" text-anchor="middle">rudray@github: ~</text>
+<text class="ascii" x="24" y="74.0" xml:space="preserve" textLength="462.0" lengthAdjust="spacing">                         ";IllI                        </text>
+<text class="ascii" x="24" y="90.8" xml:space="preserve" textLength="462.0" lengthAdjust="spacing">                         QqdbpO                        </text>
+<text class="ascii" x="24" y="107.6" xml:space="preserve" textLength="462.0" lengthAdjust="spacing">                       dW$$B8&amp;%&amp;W#q                    </text>
+<text class="ascii" x="24" y="124.4" xml:space="preserve" textLength="462.0" lengthAdjust="spacing">                      LB$B%%MW*M%$$*                   </text>
+<text class="ascii" x="24" y="141.2" xml:space="preserve" textLength="462.0" lengthAdjust="spacing">                      bBLvn/|1~-|m8B                   </text>
+<text class="ascii" x="24" y="158.0" xml:space="preserve" textLength="462.0" lengthAdjust="spacing">                      qC|UYn__fxxno#                   </text>
+<text class="ascii" x="24" y="174.8" xml:space="preserve" textLength="462.0" lengthAdjust="spacing">                      Z)(YjY[-jxf(0C                   </text>
+<text class="ascii" x="24" y="191.6" xml:space="preserve" textLength="462.0" lengthAdjust="spacing">                      C1+![1ll!,:[u-                   </text>
+<text class="ascii" x="24" y="208.4" xml:space="preserve" textLength="462.0" lengthAdjust="spacing">                       \u\Omn||\]f/                    </text>
+<text class="ascii" x="24" y="225.2" xml:space="preserve" textLength="462.0" lengthAdjust="spacing">                        Xvnu\{{[fnI                    </text>
+<text class="ascii" x="24" y="242.0" xml:space="preserve" textLength="462.0" lengthAdjust="spacing">                        }Or/1?[uCYL                    </text>
+<text class="ascii" x="24" y="258.8" xml:space="preserve" textLength="462.0" lengthAdjust="spacing">                        vOd#apOz[rdU                   </text>
+<text class="ascii" x="24" y="275.6" xml:space="preserve" textLength="462.0" lengthAdjust="spacing">                        *hOmU\{_/CQJQU                 </text>
+<text class="ascii" x="24" y="292.4" xml:space="preserve" textLength="462.0" lengthAdjust="spacing">                       (Ymzr(-?nLXLJCC0ZO0J            </text>
+<text class="ascii" x="24" y="309.2" xml:space="preserve" textLength="462.0" lengthAdjust="spacing">                 OqQYYXYown~!)U#&amp;k0JUC0Q0CLZOC         </text>
+<text class="ascii" x="24" y="326.0" xml:space="preserve" textLength="462.0" lengthAdjust="spacing">                0mqQ0cpM8**QYpmQq#qJJQCqwmCJUQZ        </text>
+<text class="ascii" x="24" y="342.8" xml:space="preserve" textLength="462.0" lengthAdjust="spacing">               LpbhZZJLLqULdwQCYQCXQLY0qwOLLQQZU       </text>
+<text class="ascii" x="24" y="359.6" xml:space="preserve" textLength="462.0" lengthAdjust="spacing">              LCQpmZCJmzOJYQYJUL0zLQXXZZwQOLUCmJ       </text>
+<text class="ascii" x="24" y="376.4" xml:space="preserve" textLength="462.0" lengthAdjust="spacing">              QbQqhJYJkYJCJ0CJU0LLLYXJ0Om0CJLQmY       </text>
+<text class="ascii" x="24" y="393.2" xml:space="preserve" textLength="462.0" lengthAdjust="spacing">             OJQpQMkdJo0ULOZ0CQOmCYJUUw*dQLQQLO        </text>
+<text class="ascii" x="24" y="410.0" xml:space="preserve" textLength="462.0" lengthAdjust="spacing">            YQwqqb#W8CbbJ0qbwZObdLYOa*bunLCUCLZ        </text>
+<text class="ascii" x="24" y="426.8" xml:space="preserve" textLength="462.0" lengthAdjust="spacing">            YJJqkmh&amp;$oma#ObobqkkMWwb8Q[-[XJUCZC        </text>
+<text class="ascii" x="24" y="443.6" xml:space="preserve" textLength="462.0" lengthAdjust="spacing">            CXzXmpZ#@$%a$hqMad#*%8#Wo|!)LQmQLw         </text>
+<text class="ascii" x="24" y="460.4" xml:space="preserve" textLength="462.0" lengthAdjust="spacing">           hLpw0JwmOQXcXOmQaa#**88*aztjOOJQQqL         </text>
+<text class="ascii" x="24" y="477.2" xml:space="preserve" textLength="462.0" lengthAdjust="spacing">          h8LQLQC0qmC\1{{{1)|jjxYUJULZQ0mQOwd          </text>
+<text class="ascii" x="24" y="494.0" xml:space="preserve" textLength="462.0" lengthAdjust="spacing">          $BZpw0O0LLZqmZLXurj/\c0Q0wwhq0OOOdJ          </text>
+<text class="ascii" x="24" y="510.8" xml:space="preserve" textLength="462.0" lengthAdjust="spacing">         #$$kbqhomOLJufXOdkdpqmoakbZo*kwmmd#z          </text>
+<text class="ascii" x="24" y="527.6" xml:space="preserve" textLength="462.0" lengthAdjust="spacing">        J$$$Wk#obdpw0XznnXq&amp;&amp;#oWB##qaW*dqb#$Y          </text>
+<text x="516.0" y="74.0" xml:space="preserve" textLength="84.0" lengthAdjust="spacing"><tspan class="p">$ </tspan><tspan class="t">neofetch</tspan></text>
+<text x="516.0" y="107.6" xml:space="preserve" textLength="453.6" lengthAdjust="spacing"><tspan class="b">rudraymehra@github </tspan><tspan class="d">───────────────────────────────────</tspan></text>
+<text x="516.0" y="124.4" xml:space="preserve" textLength="453.6" lengthAdjust="spacing"><tspan class="d">. </tspan><tspan class="k">OS:</tspan><tspan class="d"> ................................... </tspan><tspan class="t">macOS, Linux</tspan></text>
+<text x="516.0" y="141.2" xml:space="preserve" textLength="453.6" lengthAdjust="spacing"><tspan class="d">. </tspan><tspan class="k">Host:</tspan><tspan class="d"> ............ </tspan><tspan class="t">Scaler Innovation Labs, Bangalore</tspan></text>
+<text x="516.0" y="158.0" xml:space="preserve" textLength="453.6" lengthAdjust="spacing"><tspan class="d">. </tspan><tspan class="k">Kernel:</tspan><tspan class="d"> ............... </tspan><tspan class="t">Full-Stack | AI/ML | Systems</tspan></text>
+<text x="516.0" y="174.8" xml:space="preserve" textLength="453.6" lengthAdjust="spacing"><tspan class="d">. </tspan><tspan class="k">Uptime:</tspan><tspan class="d"> ............... </tspan><tspan class="t">19 years, 11 months, 18 days</tspan></text>
+<text x="516.0" y="191.6" xml:space="preserve" textLength="453.6" lengthAdjust="spacing"><tspan class="d">. </tspan><tspan class="k">Languages:</tspan><tspan class="d"> .......... </tspan><tspan class="t">TypeScript, Java, Python, Rust</tspan></text>
+<text x="516.0" y="208.4" xml:space="preserve" textLength="453.6" lengthAdjust="spacing"><tspan class="d">. </tspan><tspan class="k">Stack:</tspan><tspan class="d"> ................ </tspan><tspan class="t">React, Next.js, Spring, Node</tspan></text>
+<text x="516.0" y="225.2" xml:space="preserve" textLength="453.6" lengthAdjust="spacing"><tspan class="d">. </tspan><tspan class="k">Learning:</tspan><tspan class="d"> ............. </tspan><tspan class="t">AI/ML Systems, Low-Level Eng</tspan></text>
+<text x="516.0" y="242.0" xml:space="preserve" textLength="453.6" lengthAdjust="spacing"><tspan class="d">. </tspan><tspan class="k">Interests:</tspan><tspan class="d"> ... </tspan><tspan class="t">HTTP servers from scratch, Hackathons</tspan></text>
+<text x="516.0" y="275.6" xml:space="preserve" textLength="453.6" lengthAdjust="spacing"><tspan class="d">- </tspan><tspan class="b">Contact </tspan><tspan class="d">────────────────────────────────────────────</tspan></text>
+<text x="516.0" y="292.4" xml:space="preserve" textLength="453.6" lengthAdjust="spacing"><tspan class="d">. </tspan><tspan class="k">Email:</tspan><tspan class="d"> ....................... </tspan><tspan class="t">rudraymehra@gmail.com</tspan></text>
+<text x="516.0" y="309.2" xml:space="preserve" textLength="453.6" lengthAdjust="spacing"><tspan class="d">. </tspan><tspan class="k">GitHub:</tspan><tspan class="d"> ..................... </tspan><tspan class="t">github.com/rudraymehra</tspan></text>
+<text x="516.0" y="342.8" xml:space="preserve" textLength="453.6" lengthAdjust="spacing"><tspan class="d">- </tspan><tspan class="b">GitHub Stats </tspan><tspan class="d">───────────────────────────────────────</tspan></text>
+<text x="516.0" y="359.6" xml:space="preserve" textLength="453.6" lengthAdjust="spacing"><tspan class="d">. </tspan><tspan class="k">Repos:</tspan><tspan class="d"> ............. </tspan><tspan class="t">37</tspan><tspan class="d"> | </tspan><tspan class="d"></tspan><tspan class="k">Stars:</tspan><tspan class="d"> ................. </tspan><tspan class="t">2</tspan></text>
+<text x="516.0" y="376.4" xml:space="preserve" textLength="453.6" lengthAdjust="spacing"><tspan class="d">. </tspan><tspan class="k">Commits:</tspan><tspan class="d"> .......... </tspan><tspan class="t">312</tspan><tspan class="d"> | </tspan><tspan class="d"></tspan><tspan class="k">Followers:</tspan><tspan class="d"> ............. </tspan><tspan class="t">7</tspan></text>
+<text x="516.0" y="393.2" xml:space="preserve" textLength="453.6" lengthAdjust="spacing"><tspan class="d">. </tspan><tspan class="k">Contributed To:</tspan><tspan class="d"> ............................ </tspan><tspan class="t">3 repos</tspan></text>
+<text x="516.0" y="410.0" xml:space="preserve" textLength="453.6" lengthAdjust="spacing"><tspan class="d">. </tspan><tspan class="k">Contributions:</tspan><tspan class="d"> ................... </tspan><tspan class="t">1,255 (past year)</tspan></text>
+<text x="516.0" y="426.8" xml:space="preserve" textLength="445.2" lengthAdjust="spacing"><tspan class="d">. </tspan><tspan class="k">Lines of Code:</tspan><tspan class="d"> ........ </tspan><tspan class="t">135,876</tspan><tspan class="d"> (</tspan><tspan class="a">+186,162</tspan><tspan class="d">, </tspan><tspan class="r">-50,286</tspan><tspan class="d">)</tspan></text>
+<text x="516.0" y="460.4" xml:space="preserve" textLength="16.8" lengthAdjust="spacing"><tspan class="p">$ </tspan></text>
+<rect class="cursor" x="532.8" y="448.4" width="8.4" height="16"/>
+<text class="m" x="500.0" y="561.2" text-anchor="middle">// Programs must be written for people to read.</text>
+</svg>
