@@ -71,6 +71,7 @@ class SvgParams:
     column_gap: int
     font_stack: str
     cursor_blink: bool
+    ascii_font_size: int | None = None  # smaller font = finer portrait grid
 
     @property
     def char_w(self) -> float:
@@ -79,6 +80,18 @@ class SvgParams:
     @property
     def line_h(self) -> float:
         return self.font_size * self.line_height
+
+    @property
+    def ascii_fs(self) -> int:
+        return self.ascii_font_size or self.font_size
+
+    @property
+    def ascii_char_w(self) -> float:
+        return self.ascii_fs * self.char_width
+
+    @property
+    def ascii_line_h(self) -> float:
+        return self.ascii_fs * self.line_height
 
 
 @dataclass

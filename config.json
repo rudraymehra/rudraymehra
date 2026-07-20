@@ -10,7 +10,7 @@
     "languages": "TypeScript, Java, Python, Rust",
     "stack": "React, Next.js, Spring, Node",
     "learning": "AI/ML Systems, Low-Level Eng",
-    "interests": "HTTP servers from scratch, Hackathons",
+    "interests": "Servers from scratch, Hackathons",
     "contact": [
       {
         "key": "Email",
@@ -24,7 +24,7 @@
   },
   "ascii": {
     "portrait": "assets/portrait.jpg",
-    "width": 55,
+    "width": 80,
     "char_aspect": 0.5,
     "ramp_dark": "$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\\|()1{}[]?-_+~i!lI;:,\"'`. ",
     "ramp_light": "$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\\|()1{}[]?-_+~i!lI;:,\"'`. ",
@@ -45,7 +45,8 @@
     "padding": 24,
     "column_gap": 30,
     "font_stack": "SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace",
-    "cursor_blink": true
+    "cursor_blink": true,
+    "ascii_font_size": 10
   },
   "themes": {
     "dark": {

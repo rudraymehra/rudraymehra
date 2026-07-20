@@ -137,7 +137,7 @@ def _style(colors: ThemeColors, config: Config) -> str:
     )
     return f"""text {{ font-family: {svg.font_stack}; font-size: {svg.font_size}px; }}
 .title {{ font-size: {svg.font_size - 2}px; fill: {colors.title_text}; }}
-.ascii {{ fill: {colors.ascii_fg}; }}
+.ascii {{ fill: {colors.ascii_fg}; font-size: {svg.ascii_fs}px; }}
 .t {{ fill: {colors.text}; }}
 .p {{ fill: {colors.accent}; }}
 .k {{ fill: {colors.key}; }}
@@ -164,23 +164,26 @@ def render_svg(ascii_rows: list[str], stats: Stats, config: Config, theme: str) 
     width = svg.canvas_width
 
     art_width = max((len(r) for r in ascii_rows), default=config.ascii.width)
-    col2_x = pad + art_width * char_w + svg.column_gap
+    col2_x = pad + art_width * svg.ascii_char_w + svg.column_gap
     col2_chars = int((width - col2_x - pad) // char_w)
     if col2_chars < 40:
         raise SystemExit(
-            f"ASCII art is too wide ({art_width} chars) — the stats column "
-            f"needs at least 40 characters; use art up to ~60 wide"
+            f"ASCII art is too wide ({art_width} chars at {svg.ascii_fs}px) — "
+            f"the stats column needs at least 40 characters"
         )
     lines = stat_lines(stats, config, col2_chars)
     quote = _daily_quote(config.quotes)
 
-    body_rows = max(len(ascii_rows), len(lines))
-    total_rows = body_rows + (2 if quote else 0)
-    height = math.ceil(BAR_HEIGHT + pad + total_rows * line_h + pad)
+    body_h = max(len(ascii_rows) * svg.ascii_line_h, len(lines) * line_h)
+    quote_h = 2 * line_h if quote else 0
+    height = math.ceil(BAR_HEIGHT + pad + body_h + quote_h + pad)
     body_top = BAR_HEIGHT + pad
 
     def baseline(row: int) -> float:
         return body_top + svg.font_size + row * line_h
+
+    def ascii_baseline(row: int) -> float:
+        return body_top + svg.ascii_fs + row * svg.ascii_line_h
 
     parts: list[str] = [
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" '
@@ -205,10 +208,10 @@ def render_svg(ascii_rows: list[str], stats: Stats, config: Config, theme: str) 
         f'text-anchor="middle">{esc(config.terminal_title)}</text>'
     )
 
-    ascii_length = round(art_width * char_w, 1)
+    ascii_length = round(art_width * svg.ascii_char_w, 1)
     for row, text in enumerate(ascii_rows):
         parts.append(
-            f'<text class="ascii" x="{pad}" y="{baseline(row):.1f}" xml:space="preserve" '
+            f'<text class="ascii" x="{pad}" y="{ascii_baseline(row):.1f}" xml:space="preserve" '
             f'textLength="{ascii_length}" lengthAdjust="spacing">{esc(text)}</text>'
         )
 
@@ -230,8 +233,9 @@ def render_svg(ascii_rows: list[str], stats: Stats, config: Config, theme: str) 
     )
 
     if quote:
+        quote_y = body_top + body_h + 1.2 * line_h
         parts.append(
-            f'<text class="m" x="{width / 2}" y="{baseline(total_rows - 1):.1f}" '
+            f'<text class="m" x="{width / 2}" y="{quote_y:.1f}" '
             f'text-anchor="middle">{esc(f"// {quote}")}</text>'
         )
 
