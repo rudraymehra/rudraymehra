@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1000" height="588" viewBox="0 0 1000 588" role="img" aria-label="Rudray Mehra terminal profile">
 <style>text { font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace; font-size: 14px; }
 .title { font-size: 12px; fill: #8b949e; }
-.ascii { fill: #70a5fd; }
+.ascii { fill: #c9d1d9; }
 .t { fill: #c9d1d9; }
 .p { fill: #70a5fd; }
 .k { fill: #bf91f3; }
@@ -22,34 +22,34 @@
 <circle cx="46" cy="18.0" r="6" fill="#ffbd2e"/>
 <circle cx="68" cy="18.0" r="6" fill="#27c93f"/>
 <text class="title" x="500.0" y="22.0" text-anchor="middle">rudray@github: ~</text>
-<text class="ascii" x="24" y="74.0" xml:space="preserve" textLength="462.0" lengthAdjust="spacing">                         8M#**#                        </text>
-<text class="ascii" x="24" y="90.8" xml:space="preserve" textLength="462.0" lengthAdjust="spacing">                         (]-_?1                        </text>
-<text class="ascii" x="24" y="107.6" xml:space="preserve" textLength="462.0" lengthAdjust="spacing">                       -:  `",',:I]                    </text>
-<text class="ascii" x="24" y="124.4" xml:space="preserve" textLength="462.0" lengthAdjust="spacing">                      |` `'';:l;'  l                   </text>
-<text class="ascii" x="24" y="141.2" xml:space="preserve" textLength="462.0" lengthAdjust="spacing">                      _`|nvJLOhdL}"`                   </text>
-<text class="ascii" x="24" y="158.0" xml:space="preserve" textLength="462.0" lengthAdjust="spacing">                      ]\LtfvbbYccv!I                   </text>
-<text class="ascii" x="24" y="174.8" xml:space="preserve" textLength="462.0" lengthAdjust="spacing">                      {0QfXfwdXcYQ)\                   </text>
-<text class="ascii" x="24" y="191.6" xml:space="preserve" textLength="462.0" lengthAdjust="spacing">                      \OkowO**o&amp;Wwud                   </text>
-<text class="ascii" x="24" y="208.4" xml:space="preserve" textLength="462.0" lengthAdjust="spacing">                       CuC1}vLLCqYJ                    </text>
-<text class="ascii" x="24" y="225.2" xml:space="preserve" textLength="462.0" lengthAdjust="spacing">                        jnvuCZZwYv#                    </text>
-<text class="ascii" x="24" y="242.0" xml:space="preserve" textLength="462.0" lengthAdjust="spacing">                        m1zJOpwu\f|                    </text>
-<text class="ascii" x="24" y="258.8" xml:space="preserve" textLength="462.0" lengthAdjust="spacing">                        n1-Ii?1rwz-t                   </text>
-<text class="ascii" x="24" y="275.6" xml:space="preserve" textLength="462.0" lengthAdjust="spacing">                        l~1}tCZbJ\(/(t                 </text>
-<text class="ascii" x="24" y="292.4" xml:space="preserve" textLength="462.0" lengthAdjust="spacing">                       Qf}rzQdpv|j|/\\){1)/            </text>
-<text class="ascii" x="24" y="309.2" xml:space="preserve" textLength="462.0" lengthAdjust="spacing">                 1](ffjf![vho0tI,+)/t\)()\|{1\         </text>
-<text class="ascii" x="24" y="326.0" xml:space="preserve" textLength="462.0" lengthAdjust="spacing">                )}]()x?;"ll(f?}(]I]//(\][}\/t({        </text>
-<text class="ascii" x="24" y="342.8" xml:space="preserve" textLength="462.0" lengthAdjust="spacing">               |?_~{{/||]t|-[(\f(\j(|f)][1||(({t       </text>
-<text class="ascii" x="24" y="359.6" xml:space="preserve" textLength="462.0" lengthAdjust="spacing">              |\(?}{\/}r1/f(f/t|)r|(jj{{[(1|t\}/       </text>
-<text class="ascii" x="24" y="376.4" xml:space="preserve" textLength="462.0" lengthAdjust="spacing">              (_(]~/f/+f/\/)\/t)|||fj/)1})\/|(}f       </text>
-<text class="ascii" x="24" y="393.2" xml:space="preserve" textLength="462.0" lengthAdjust="spacing">             1/(?(;+-/!)t|1{)\(1}\f/tt[l-(|((|1        </text>
-<text class="ascii" x="24" y="410.0" xml:space="preserve" textLength="462.0" lengthAdjust="spacing">            f([]]_I:"\__/)]_[{1_-|f1il_uv|\t\|{        </text>
-<text class="ascii" x="24" y="426.8" xml:space="preserve" textLength="462.0" lengthAdjust="spacing">            f//]+}~, !}iI1_!_]++;:[_"(wdwj/t\{\        </text>
-<text class="ascii" x="24" y="443.6" xml:space="preserve" textLength="462.0" lengthAdjust="spacing">            \jrj}?{I. 'i ~];i-Il'"I:!Lo0|(}(|[         </text>
-<text class="ascii" x="24" y="460.4" xml:space="preserve" textLength="462.0" lengthAdjust="spacing">           ~|?[)/[}1(jxj1}(iiIll""lirUX11/((]|         </text>
-<text class="ascii" x="24" y="477.2" xml:space="preserve" textLength="462.0" lengthAdjust="spacing">          ~"|(|(\)]}\COZZZO0LXXcft/t|{()}(1[-          </text>
-<text class="ascii" x="24" y="494.0" xml:space="preserve" textLength="462.0" lengthAdjust="spacing">           `{?[)1)||{]}{|juzXJCx)()[[~])111-/          </text>
-<text class="ascii" x="24" y="510.8" xml:space="preserve" textLength="462.0" lengthAdjust="spacing">         I  +_]~!}1|/uYj1-+-?]}!i+_{!l+[}}-Ir          </text>
-<text class="ascii" x="24" y="527.6" xml:space="preserve" textLength="462.0" lengthAdjust="spacing">        /   :+I!_-?[)jrvvj],,I!:`II]i:l-]_I f          </text>
+<text class="ascii" x="24" y="74.0" xml:space="preserve" textLength="462.0" lengthAdjust="spacing">                    .";I!~~i!l;,'                      </text>
+<text class="ascii" x="24" y="90.8" xml:space="preserve" textLength="462.0" lengthAdjust="spacing">                    tYmbka&amp;#bwOzf                      </text>
+<text class="ascii" x="24" y="107.6" xml:space="preserve" textLength="462.0" lengthAdjust="spacing">                  nh$$$MMoM#$omOmqmc|                  </text>
+<text class="ascii" x="24" y="124.4" xml:space="preserve" textLength="462.0" lengthAdjust="spacing">                 $wCq#&amp;MMbdk0qqZLJmo$$C                </text>
+<text class="ascii" x="24" y="141.2" xml:space="preserve" textLength="462.0" lengthAdjust="spacing">                Uqq$&amp;a#MMk0QZ&amp;$&amp;$$#h#M$Y               </text>
+<text class="ascii" x="24" y="158.0" xml:space="preserve" textLength="462.0" lengthAdjust="spacing">               fLk&amp;$$$obd$$a$OczOk&amp;$$$Mdj              </text>
+<text class="ascii" x="24" y="174.8" xml:space="preserve" textLength="462.0" lengthAdjust="spacing">               zw$$Lvnf//(][[~ll~_}vh#&amp;$o              </text>
+<text class="ascii" x="24" y="191.6" xml:space="preserve" textLength="462.0" lengthAdjust="spacing">               cd#c+l+~!I;,,,""":;!?cMd#q              </text>
+<text class="ascii" x="24" y="208.4" xml:space="preserve" textLength="462.0" lengthAdjust="spacing">               fbC_i)\()?l""":l~-[1[1hh#/              </text>
+<text class="ascii" x="24" y="225.2" xml:space="preserve" textLength="462.0" lengthAdjust="spacing">               rm{I)rxrjC0],~|nv/{(|-x&amp;M+              </text>
+<text class="ascii" x="24" y="242.0" xml:space="preserve" textLength="462.0" lengthAdjust="spacing">              j{x+;_}t/l}v+'li+{1?}i~/ht]              </text>
+<text class="ascii" x="24" y="258.8" xml:space="preserve" textLength="462.0" lengthAdjust="spacing">              1\Xl:;Il;;i;".";"''",;i/\;i              </text>
+<text class="ascii" x="24" y="275.6" xml:space="preserve" textLength="462.0" lengthAdjust="spacing">               |ul;;;"'++"" .,:'..";i|!;:              </text>
+<text class="ascii" x="24" y="292.4" xml:space="preserve" textLength="462.0" lengthAdjust="spacing">                ?_i-~I~xux(_-+;i!,:I]|l;               </text>
+<text class="ascii" x="24" y="309.2" xml:space="preserve" textLength="462.0" lengthAdjust="spacing">                 !}\]?uzjr)_~~~-?i~?1+l                </text>
+<text class="ascii" x="24" y="326.0" xml:space="preserve" textLength="462.0" lengthAdjust="spacing">                  ?j)_{f){i;~-]]ii_]-                  </text>
+<text class="ascii" x="24" y="342.8" xml:space="preserve" textLength="462.0" lengthAdjust="spacing">                   {t)]-{()]~I:,l+?f!                  </text>
+<text class="ascii" x="24" y="359.6" xml:space="preserve" textLength="462.0" lengthAdjust="spacing">                    t\?ilII:"":l+)Y|/r                 </text>
+<text class="ascii" x="24" y="376.4" xml:space="preserve" textLength="462.0" lengthAdjust="spacing">                    tYr//{-+++]/cu1~n&amp;t                </text>
+<text class="ascii" x="24" y="393.2" xml:space="preserve" textLength="462.0" lengthAdjust="spacing">                   {{UYL$$$&amp;owLv)~lI|vrx               </text>
+<text class="ascii" x="24" y="410.0" xml:space="preserve" textLength="462.0" lengthAdjust="spacing">                   a\junYpJr/)-ilI;[rrj(t(             </text>
+<text class="ascii" x="24" y="426.8" xml:space="preserve" textLength="462.0" lengthAdjust="spacing">                   k$Jnftx\-i!ll;I1x\xj|\xrf/1         </text>
+<text class="ascii" x="24" y="443.6" xml:space="preserve" textLength="462.0" lengthAdjust="spacing">               Q   xq0Yx/\[+i!!l+/x|/nj\fj//\tfruvu|  l</text>
+<text class="ascii" x="24" y="460.4" xml:space="preserve" textLength="462.0" lengthAdjust="spacing">        (r\)  |r   (nf{([-_iI;I_\\)|/x//t\/tjjnx/j/jnr/</text>
+<text class="ascii" x="24" y="477.2" xml:space="preserve" textLength="462.0" lengthAdjust="spacing">       xvu|)v?ff  [jjf{!;:::;l?/XJut|t////\fjuu|xj/tttr</text>
+<text class="ascii" x="24" y="494.0" xml:space="preserve" textLength="462.0" lengthAdjust="spacing">     {fcunfr|_jv?fO$Qnu1;",;+|zm$$$MJjt/////xx|uvtjftxu</text>
+<text class="ascii" x="24" y="510.8" xml:space="preserve" textLength="462.0" lengthAdjust="spacing">   t\//Oxttcf-tQU$$oM$p0j]_1XJnxxcLb&amp;Zn//\/xj\nLrunftt/</text>
+<text class="ascii" x="24" y="527.6" xml:space="preserve" textLength="462.0" lengthAdjust="spacing">~-\YXvrzmjtcJ{(xcXwdxzCUCLcLQxjt\/tcn\/t/\nf\fZuvYcr///</text>
 <text x="516.0" y="74.0" xml:space="preserve" textLength="84.0" lengthAdjust="spacing"><tspan class="p">$ </tspan><tspan class="t">neofetch</tspan></text>
 <text x="516.0" y="107.6" xml:space="preserve" textLength="453.6" lengthAdjust="spacing"><tspan class="b">rudraymehra@github </tspan><tspan class="d">───────────────────────────────────</tspan></text>
 <text x="516.0" y="124.4" xml:space="preserve" textLength="453.6" lengthAdjust="spacing"><tspan class="d">. </tspan><tspan class="k">OS:</tspan><tspan class="d"> ................................... </tspan><tspan class="t">macOS, Linux</tspan></text>
@@ -64,11 +64,11 @@
 <text x="516.0" y="292.4" xml:space="preserve" textLength="453.6" lengthAdjust="spacing"><tspan class="d">. </tspan><tspan class="k">Email:</tspan><tspan class="d"> ....................... </tspan><tspan class="t">rudraymehra@gmail.com</tspan></text>
 <text x="516.0" y="309.2" xml:space="preserve" textLength="453.6" lengthAdjust="spacing"><tspan class="d">. </tspan><tspan class="k">GitHub:</tspan><tspan class="d"> ..................... </tspan><tspan class="t">github.com/rudraymehra</tspan></text>
 <text x="516.0" y="342.8" xml:space="preserve" textLength="453.6" lengthAdjust="spacing"><tspan class="d">- </tspan><tspan class="b">GitHub Stats </tspan><tspan class="d">───────────────────────────────────────</tspan></text>
-<text x="516.0" y="359.6" xml:space="preserve" textLength="453.6" lengthAdjust="spacing"><tspan class="d">. </tspan><tspan class="k">Repos:</tspan><tspan class="d"> ............. </tspan><tspan class="t">37</tspan><tspan class="d"> | </tspan><tspan class="d"></tspan><tspan class="k">Stars:</tspan><tspan class="d"> ................. </tspan><tspan class="t">2</tspan></text>
-<text x="516.0" y="376.4" xml:space="preserve" textLength="453.6" lengthAdjust="spacing"><tspan class="d">. </tspan><tspan class="k">Commits:</tspan><tspan class="d"> .......... </tspan><tspan class="t">312</tspan><tspan class="d"> | </tspan><tspan class="d"></tspan><tspan class="k">Followers:</tspan><tspan class="d"> ............. </tspan><tspan class="t">7</tspan></text>
-<text x="516.0" y="393.2" xml:space="preserve" textLength="453.6" lengthAdjust="spacing"><tspan class="d">. </tspan><tspan class="k">Contributed To:</tspan><tspan class="d"> ............................ </tspan><tspan class="t">3 repos</tspan></text>
-<text x="516.0" y="410.0" xml:space="preserve" textLength="453.6" lengthAdjust="spacing"><tspan class="d">. </tspan><tspan class="k">Contributions:</tspan><tspan class="d"> ................... </tspan><tspan class="t">1,256 (past year)</tspan></text>
-<text x="516.0" y="426.8" xml:space="preserve" textLength="445.2" lengthAdjust="spacing"><tspan class="d">. </tspan><tspan class="k">Lines of Code:</tspan><tspan class="d"> ........ </tspan><tspan class="t">135,858</tspan><tspan class="d"> (</tspan><tspan class="a">+186,144</tspan><tspan class="d">, </tspan><tspan class="r">-50,286</tspan><tspan class="d">)</tspan></text>
+<text x="516.0" y="359.6" xml:space="preserve" textLength="453.6" lengthAdjust="spacing"><tspan class="d">. </tspan><tspan class="k">Repos:</tspan><tspan class="d"> ............. </tspan><tspan class="t">42</tspan><tspan class="d"> | </tspan><tspan class="d"></tspan><tspan class="k">Stars:</tspan><tspan class="d"> ................. </tspan><tspan class="t">2</tspan></text>
+<text x="516.0" y="376.4" xml:space="preserve" textLength="453.6" lengthAdjust="spacing"><tspan class="d">. </tspan><tspan class="k">Commits:</tspan><tspan class="d"> .......... </tspan><tspan class="t">511</tspan><tspan class="d"> | </tspan><tspan class="d"></tspan><tspan class="k">Followers:</tspan><tspan class="d"> ............. </tspan><tspan class="t">7</tspan></text>
+<text x="516.0" y="393.2" xml:space="preserve" textLength="453.6" lengthAdjust="spacing"><tspan class="d">. </tspan><tspan class="k">Contributed To:</tspan><tspan class="d"> ............................ </tspan><tspan class="t">4 repos</tspan></text>
+<text x="516.0" y="410.0" xml:space="preserve" textLength="453.6" lengthAdjust="spacing"><tspan class="d">. </tspan><tspan class="k">Contributions:</tspan><tspan class="d"> ..................... </tspan><tspan class="t">815 (past year)</tspan></text>
+<text x="516.0" y="426.8" xml:space="preserve" textLength="445.2" lengthAdjust="spacing"><tspan class="d">. </tspan><tspan class="k">Lines of Code:</tspan><tspan class="d"> ........ </tspan><tspan class="t">210,930</tspan><tspan class="d"> (</tspan><tspan class="a">+286,053</tspan><tspan class="d">, </tspan><tspan class="r">-75,123</tspan><tspan class="d">)</tspan></text>
 <text x="516.0" y="460.4" xml:space="preserve" textLength="16.8" lengthAdjust="spacing"><tspan class="p">$ </tspan></text>
 <rect class="cursor" x="532.8" y="448.4" width="8.4" height="16"/>
 <text class="m" x="500.0" y="561.2" text-anchor="middle">// Programs must be written for people to read.</text>

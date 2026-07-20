@@ -12,22 +12,29 @@
     "learning": "AI/ML Systems, Low-Level Eng",
     "interests": "HTTP servers from scratch, Hackathons",
     "contact": [
-      { "key": "Email", "value": "rudraymehra@gmail.com" },
-      { "key": "GitHub", "value": "github.com/rudraymehra" }
+      {
+        "key": "Email",
+        "value": "rudraymehra@gmail.com"
+      },
+      {
+        "key": "GitHub",
+        "value": "github.com/rudraymehra"
+      }
     ]
   },
   "ascii": {
     "portrait": "assets/portrait.jpg",
     "width": 55,
     "char_aspect": 0.5,
-    "ramp_dark": " .`'\",:;Il!i~+_-?][}{1)(|\\/tfjrxnuvczXYUJCLQ0OZmwqpdbkhao*#MW&8%B@$",
-    "ramp_light": null,
+    "ramp_dark": "$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\\|()1{}[]?-_+~i!lI;:,\"'`. ",
+    "ramp_light": "$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\\|()1{}[]?-_+~i!lI;:,\"'`. ",
     "bg_saturation": 0.16,
     "bg_lum_floor": 110,
     "min_region": 12,
     "edge_threshold": 0,
     "edge_char": "#",
-    "contrast_cutoff": 2
+    "contrast_cutoff": 8,
+    "gamma": 2.2
   },
   "svg": {
     "canvas_width": 1000,
@@ -50,7 +57,7 @@
       "key": "#bf91f3",
       "value": "#c9d1d9",
       "dots": "#484f58",
-      "ascii_fg": "#70a5fd",
+      "ascii_fg": "#c9d1d9",
       "cursor": "#70a5fd",
       "muted": "#8b949e",
       "add": "#3fb950",
@@ -66,7 +73,7 @@
       "key": "#8250df",
       "value": "#1f2328",
       "dots": "#c8ccd1",
-      "ascii_fg": "#0969da",
+      "ascii_fg": "#1f2328",
       "cursor": "#0969da",
       "muted": "#57606a",
       "add": "#1a7f37",

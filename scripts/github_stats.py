@@ -58,7 +58,6 @@ query($login: String!) {
   user(login: $login) {
     contributionsCollection {
       contributionCalendar { totalContributions }
-      restrictedContributionsCount
     }
   }
 }
@@ -147,13 +146,16 @@ def fetch_repos(username: str, token: str) -> tuple[int, list[dict[str, Any]]]:
 
 
 def fetch_contributions(username: str, token: str) -> int:
-    """Total contributions over the last year (public + restricted)."""
+    """Contributions over the last year, matching the profile graph.
+
+    The calendar total is exactly the number GitHub shows on the profile;
+    private activity is included when the token (or the user's "private
+    contributions" profile setting) allows it. Do NOT add
+    restrictedContributionsCount on top — that double-counts.
+    """
     data = graphql(QUERY_CONTRIBUTIONS, {"login": username}, token)
-    collection = data["user"]["contributionsCollection"]
-    return (
-        collection["contributionCalendar"]["totalContributions"]
-        + collection["restrictedContributionsCount"]
-    )
+    calendar = data["user"]["contributionsCollection"]["contributionCalendar"]
+    return calendar["totalContributions"]
 
 
 def scan_repo_loc(

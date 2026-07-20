@@ -147,7 +147,11 @@ def map_to_chars(
 ) -> list[str]:
     """Turn the character-grid luminance into fixed-width ASCII rows."""
     ramp = params.ramp(theme)
-    indices = (arr / 256.0 * len(ramp)).astype(int).clip(0, len(ramp) - 1)
+    # gamma > 1 lifts midtones toward the sparse end of the ramp, keeping
+    # skin near-blank so only genuinely dark features (hair, eyes, brows,
+    # outlines) get ink — the classic hand-drawn ASCII-portrait look.
+    lum = (arr / 255.0).clip(0.0, 1.0) ** (1.0 / params.gamma)
+    indices = (lum * len(ramp)).astype(int).clip(0, len(ramp) - 1)
     rows: list[str] = []
     for y in range(arr.shape[0]):
         chars = []

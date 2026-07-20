@@ -42,6 +42,7 @@ class AsciiParams:
     bg_saturation: float
     bg_lum_floor: int
     min_region: int
+    gamma: float
     edge_threshold: int
     edge_char: str
     contrast_cutoff: float
