@@ -60,9 +60,14 @@ Key decisions:
   brighter than `bg_lum_floor` (protects dark clothing/hair) and
   flood-fill-connected to the image border (protects gray areas inside
   the subject). A majority filter and a minimum-region pass kill specks.
-- **Per-theme ramps**: on a dark canvas bright pixels get dense glyphs
-  ("light is ink"); on white the mapping inverts. Both themes are
-  photo-true rather than sharing one baked drawing.
+- **Structural glyph matching** (`ascii.structural`): the image is
+  resampled to a sub-cell raster (6×12 px per character), every candidate
+  glyph is rendered to the same raster, and each cell picks the glyph
+  minimizing `(1 - shape_correlation) + w · |density difference|`. Eyes,
+  nostrils, and hair strands land on characters that actually look like
+  them, instead of whatever the density ramp happened to assign. The
+  legacy density-ramp path (with dithering and directional edge strokes)
+  remains available with `structural: false`.
 
 ## Stats fetching
 

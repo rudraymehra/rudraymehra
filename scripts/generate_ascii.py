@@ -241,6 +241,104 @@ def _trim_blank_rows(rows: list[str]) -> list[str]:
     return rows[start:end]
 
 
+# --- Structural glyph matching -------------------------------------------
+# Instead of mapping each cell's mean luminance to a density ramp, render
+# every candidate glyph as a small bitmap and pick, per cell, the glyph
+# whose drawn SHAPE best matches the image patch it will replace. This is
+# the technique from structure-based ASCII-art research and is what makes
+# eyes, nostrils, and hair strands land as the right characters.
+
+_GLYPH_RASTER = (6, 12)  # (w, h) pixels per cell, matches the 1:2 cell aspect
+_FONT_CANDIDATES = (
+    "/System/Library/Fonts/Menlo.ttc",
+    "/System/Library/Fonts/Monaco.ttf",
+    "/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf",
+    "/usr/share/fonts/truetype/liberation/LiberationMono-Regular.ttf",
+)
+
+
+def _load_font(size: int):
+    from PIL import ImageFont
+
+    for path in _FONT_CANDIDATES:
+        try:
+            return ImageFont.truetype(path, size)
+        except OSError:
+            continue
+    return ImageFont.load_default(size=size)
+
+
+def _glyph_bitmaps(chars: str) -> tuple[str, np.ndarray]:
+    """Render candidate glyphs -> (chars, coverage array [n, gh*gw] in 0..1)."""
+    from PIL import ImageDraw
+
+    gw, gh = _GLYPH_RASTER
+    scale = 4
+    font = _load_font(gh * scale)
+    bitmaps = []
+    kept = []
+    for ch in chars:
+        img = Image.new("L", (gw * scale, gh * scale), 0)
+        draw = ImageDraw.Draw(img)
+        left, top, right, bottom = draw.textbbox((0, 0), ch, font=font)
+        dx = (gw * scale - (right - left)) / 2 - left
+        dy = (gh * scale - (bottom - top)) / 2 - top
+        draw.text((dx, dy), ch, fill=255, font=font)
+        small = img.resize((gw, gh), Image.LANCZOS)
+        bitmaps.append(np.asarray(small, dtype=np.float32).ravel() / 255.0)
+        kept.append(ch)
+    return "".join(kept), np.stack(bitmaps)
+
+
+def structural_map(
+    darkness: np.ndarray,
+    mask: np.ndarray,
+    ramp: str,
+    rows: int,
+    width: int,
+    density_weight: float = 2.5,
+) -> list[str]:
+    """Pick the best-matching glyph per cell from shape + density scores.
+
+    darkness: hi-res array (rows*gh, width*gw) in [0, 1], 1 = full ink.
+    mask: cell-resolution background mask (rows, width).
+    """
+    gw, gh = _GLYPH_RASTER
+    chars, glyphs = _glyph_bitmaps(ramp + "/\\|-_=<>^v()[]{}?!;:")
+    densities = glyphs.mean(axis=1)
+    dens_scale = float(densities.max()) or 1.0
+    densities = densities / dens_scale
+
+    patches = (
+        darkness.reshape(rows, gh, width, gw).transpose(0, 2, 1, 3).reshape(-1, gh * gw)
+    )
+    target_density = patches.mean(axis=1)
+
+    # Shape term: normalized cross-correlation, faded out on near-flat
+    # patches so featureless skin is chosen by tone alone.
+    p_centered = patches - patches.mean(axis=1, keepdims=True)
+    p_norm = np.linalg.norm(p_centered, axis=1, keepdims=True)
+    g_centered = glyphs - glyphs.mean(axis=1, keepdims=True)
+    g_norm = np.linalg.norm(g_centered, axis=1, keepdims=True)
+    g_norm[g_norm == 0] = 1.0
+    safe_p_norm = np.where(p_norm == 0, 1.0, p_norm)
+    ncc = (p_centered / safe_p_norm) @ (g_centered / g_norm).T
+    ncc *= np.clip(patches.std(axis=1, keepdims=True) / 0.12, 0.0, 1.0)
+
+    density_diff = np.abs(target_density[:, None] - densities[None, :])
+    score = (1.0 - ncc) + density_weight * density_diff
+    best = score.argmin(axis=1).reshape(rows, width)
+
+    out = []
+    for y in range(rows):
+        out.append(
+            "".join(
+                " " if mask[y, x] else chars[best[y, x]] for x in range(width)
+            )
+        )
+    return out
+
+
 def load_static_art(path: Path) -> list[str]:
     """Load hand-made ASCII art, normalized to equal-width printable rows."""
     rows = [
@@ -269,12 +367,24 @@ def generate_ascii(params: AsciiParams, theme: str, base_dir: Path | str = ".") 
         raise SystemExit(f"portrait not found: {portrait}")
     gray, rgb = load_image(portrait)
     gray = autocontrast(gray, params.contrast_cutoff)
-    gray, rgb = resize_for_terminal(gray, rgb, params.width, params.char_aspect)
-    mask = background_mask(gray, rgb, params.bg_saturation, params.bg_lum_floor)
+    cell_gray, cell_rgb = resize_for_terminal(gray, rgb, params.width, params.char_aspect)
+    mask = background_mask(cell_gray, cell_rgb, params.bg_saturation, params.bg_lum_floor)
     mask = remove_small_islands(mask, params.min_region)
-    gray = unsharp_mask(gray, params.sharpen)
-    edges = sobel(gray)
-    return _trim_blank_rows(map_to_chars(gray, mask, edges, params, theme))
+
+    if params.structural:
+        gw, gh = _GLYPH_RASTER
+        rows_n, width = mask.shape
+        hi = Image.fromarray(gray.astype(np.uint8)).resize(
+            (width * gw, rows_n * gh), Image.LANCZOS
+        )
+        hi_arr = unsharp_mask(np.asarray(hi, dtype=np.float32), params.sharpen, radius=gw)
+        darkness = 1.0 - (hi_arr / 255.0).clip(0.0, 1.0) ** (1.0 / params.gamma)
+        art = structural_map(darkness, mask, params.ramp(theme), rows_n, width)
+        return _trim_blank_rows(art)
+
+    cell_gray = unsharp_mask(cell_gray, params.sharpen)
+    edges = sobel(cell_gray)
+    return _trim_blank_rows(map_to_chars(cell_gray, mask, edges, params, theme))
 
 
 if __name__ == "__main__":

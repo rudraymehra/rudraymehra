@@ -31,9 +31,13 @@ truncated with an ellipsis, so keep them under ~35 characters.
 | `bg_saturation` | Max color saturation to count as backdrop | Raise if backdrop survives |
 | `bg_lum_floor` | Min luminance to count as backdrop | Lower it to eat dark backdrops; raise it if clothing develops holes |
 | `min_region` | Erase foreground islands smaller than this | Kills stray specks |
-| `edge_threshold` | Sobel edge overlay; `0` disables | 100–180 adds outlines |
-| `edge_char` | Glyph used for edges | `#` or `@` |
-| `contrast_cutoff` | Percentile clipped on each end | 1–5 |
+| `gamma` | Midtone rolloff; higher = more blank skin | 1.8–2.4 |
+| `sharpen` | Unsharp-mask strength; boosts facial features | 0.5–1.2; 0 disables |
+| `structural` | Pick glyphs by drawn **shape**, not just density | Best fidelity; the flags below only apply when it's off |
+| `dither` | Floyd–Steinberg shading (non-structural mode) | |
+| `edge_threshold` | Directional stroke overlay (non-structural mode); `0` disables | 60–120 |
+| `edge_char` | Legacy fixed edge glyph | unused when strokes are directional |
+| `contrast_cutoff` | Percentile clipped on each end | 2–8 |
 
 Preview loop while tuning: `python scripts/generate_ascii.py --theme dark`.
 

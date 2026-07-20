@@ -37,7 +37,8 @@
     "gamma": 1.9,
     "static_art": "assets/portrait_ascii.txt",
     "sharpen": 0.6,
-    "dither": true
+    "dither": true,
+    "structural": true
   },
   "svg": {
     "canvas_width": 1000,
