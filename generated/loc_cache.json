@@ -98,7 +98,7 @@
       "deletions": 227
     },
     "rudraymehra/rudraymehra": {
-      "head_oid": "37cca705ad5cfb413821a9dd608bed8720f35c38",
+      "head_oid": "baab06fb826d822420821890bd4a86ea5a5ec9f7",
       "commits": 16,
       "additions": 3418,
       "deletions": 1091
@@ -162,12 +162,6 @@
       "commits": 12,
       "additions": 12035,
       "deletions": 246
-    },
-    "rudraymehra/KVStash": {
-      "head_oid": "e671185ecda410a74d6bee897919958a8662e242",
-      "commits": 294,
-      "additions": 121812,
-      "deletions": 6982
     }
   }
 }
