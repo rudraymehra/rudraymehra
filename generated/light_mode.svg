@@ -83,7 +83,7 @@
 <text x="537.0" y="124.4" xml:space="preserve" textLength="436.8" lengthAdjust="spacing"><tspan class="d">. </tspan><tspan class="k">OS:</tspan><tspan class="d"> ................................. </tspan><tspan class="t">macOS, Linux</tspan></text>
 <text x="537.0" y="141.2" xml:space="preserve" textLength="436.8" lengthAdjust="spacing"><tspan class="d">. </tspan><tspan class="k">Host:</tspan><tspan class="d"> .......... </tspan><tspan class="t">Scaler Innovation Labs, Bangalore</tspan></text>
 <text x="537.0" y="158.0" xml:space="preserve" textLength="436.8" lengthAdjust="spacing"><tspan class="d">. </tspan><tspan class="k">Kernel:</tspan><tspan class="d"> ............. </tspan><tspan class="t">Full-Stack | AI/ML | Systems</tspan></text>
-<text x="537.0" y="174.8" xml:space="preserve" textLength="436.8" lengthAdjust="spacing"><tspan class="d">. </tspan><tspan class="k">Uptime:</tspan><tspan class="d"> .............. </tspan><tspan class="t">20 years, 0 months, 14 days</tspan></text>
+<text x="537.0" y="174.8" xml:space="preserve" textLength="436.8" lengthAdjust="spacing"><tspan class="d">. </tspan><tspan class="k">Uptime:</tspan><tspan class="d"> .............. </tspan><tspan class="t">20 years, 0 months, 15 days</tspan></text>
 <text x="537.0" y="191.6" xml:space="preserve" textLength="436.8" lengthAdjust="spacing"><tspan class="d">. </tspan><tspan class="k">Languages:</tspan><tspan class="d"> ........ </tspan><tspan class="t">TypeScript, Java, Python, Rust</tspan></text>
 <text x="537.0" y="208.4" xml:space="preserve" textLength="436.8" lengthAdjust="spacing"><tspan class="d">. </tspan><tspan class="k">Stack:</tspan><tspan class="d"> .............. </tspan><tspan class="t">React, Next.js, Spring, Node</tspan></text>
 <text x="537.0" y="225.2" xml:space="preserve" textLength="436.8" lengthAdjust="spacing"><tspan class="d">. </tspan><tspan class="k">Learning:</tspan><tspan class="d"> ........... </tspan><tspan class="t">AI/ML Systems, Low-Level Eng</tspan></text>
@@ -99,5 +99,5 @@
 <text x="537.0" y="426.8" xml:space="preserve" textLength="428.4" lengthAdjust="spacing"><tspan class="d">. </tspan><tspan class="k">Lines of Code:</tspan><tspan class="d"> ....... </tspan><tspan class="t">91,598</tspan><tspan class="d"> (</tspan><tspan class="a">+140,976</tspan><tspan class="d">, </tspan><tspan class="r">-49,378</tspan><tspan class="d">)</tspan></text>
 <text x="537.0" y="460.4" xml:space="preserve" textLength="16.8" lengthAdjust="spacing"><tspan class="p">$ </tspan></text>
 <rect class="cursor" x="553.8" y="448.4" width="8.4" height="16"/>
-<text class="m" x="500.0" y="550.6" text-anchor="middle">// Talk is cheap. Show me the code.</text>
+<text class="m" x="500.0" y="550.6" text-anchor="middle">// Programs must be written for people to read.</text>
 </svg>
