@@ -94,8 +94,11 @@ def render_projects_svg(config: Config, loc_cache: dict[str, Any], theme: str) -
     return "\n".join(parts) + "\n"
 
 
-def _language_lines(languages: dict[str, int], width: int) -> list[Line]:
+def _language_lines(
+    languages: dict[str, int], width: int, exclude: set[str] = frozenset()
+) -> list[Line]:
     """`TypeScript  ██████████░░░░░░  38.4%` rows, top languages by bytes."""
+    languages = {k: v for k, v in languages.items() if k not in exclude}
     total = sum(languages.values())
     if not total:
         return []
@@ -152,7 +155,9 @@ def render_activity_svg(
             f"canvas is too narrow ({width}px) — the activity panel's language "
             f"column needs at least 32 characters next to the heatmap"
         )
-    lang_lines = _language_lines(languages, col2_chars)
+    lang_lines = _language_lines(
+        languages, col2_chars, set(config.languages.get("exclude", []))
+    )
     lang_bottom = grid_top - 2 + len(lang_lines) * line_h
     prompt_baseline = max(legend_baseline, lang_bottom) + 1.6 * line_h
     height = math.ceil(prompt_baseline + (line_h - font_size) + pad)

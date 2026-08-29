@@ -132,5 +132,8 @@
     "include_forks": false,
     "exclude_repos": [],
     "max_pages_per_repo": 30
+  },
+  "languages": {
+    "exclude": ["Jupyter Notebook", "HTML", "CSS", "SCSS"]
   }
 }

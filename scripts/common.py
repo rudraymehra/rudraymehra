@@ -140,6 +140,7 @@ class Config:
     quotes: list[str] = field(default_factory=list)
     loc: dict[str, Any] = field(default_factory=dict)
     projects: list[dict[str, str]] = field(default_factory=list)
+    languages: dict[str, Any] = field(default_factory=dict)
 
 
 def load_config(path: Path | str) -> Config:
@@ -168,6 +169,7 @@ def load_config(path: Path | str) -> Config:
             quotes=raw.get("quotes", []),
             loc=raw.get("loc", {}),
             projects=projects,
+            languages=raw.get("languages", {}),
         )
     except (KeyError, TypeError) as exc:
         raise SystemExit(f"config.json is invalid: {exc}") from exc

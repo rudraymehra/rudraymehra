@@ -402,11 +402,11 @@
 <rect x="104.6" y="212.0" width="9" height="9" rx="2" fill="#4589d6"/>
 <rect x="117.6" y="212.0" width="9" height="9" rx="2" fill="#0969da"/>
 <text class="m" x="138.6" y="221.0">more</text>
-<text x="635.0" y="141.2" xml:space="preserve" textLength="319.2" lengthAdjust="spacing"><tspan class="k">JavaScript      </tspan><tspan class="p">████████████████</tspan><tspan class="d"></tspan><tspan class="m"> 35.3%</tspan></text>
-<text x="635.0" y="158.0" xml:space="preserve" textLength="319.2" lengthAdjust="spacing"><tspan class="k">TypeScript      </tspan><tspan class="p">███████████</tspan><tspan class="d">░░░░░</tspan><tspan class="m"> 24.4%</tspan></text>
-<text x="635.0" y="174.8" xml:space="preserve" textLength="319.2" lengthAdjust="spacing"><tspan class="k">Python          </tspan><tspan class="p">█████████</tspan><tspan class="d">░░░░░░░</tspan><tspan class="m"> 19.0%</tspan></text>
-<text x="635.0" y="191.6" xml:space="preserve" textLength="319.2" lengthAdjust="spacing"><tspan class="k">Jupyter Notebo… </tspan><tspan class="p">██████</tspan><tspan class="d">░░░░░░░░░░</tspan><tspan class="m"> 12.4%</tspan></text>
-<text x="635.0" y="208.4" xml:space="preserve" textLength="319.2" lengthAdjust="spacing"><tspan class="k">Java            </tspan><tspan class="p">██</tspan><tspan class="d">░░░░░░░░░░░░░░</tspan><tspan class="m">  3.9%</tspan></text>
+<text x="635.0" y="141.2" xml:space="preserve" textLength="319.2" lengthAdjust="spacing"><tspan class="k">JavaScript      </tspan><tspan class="p">████████████████</tspan><tspan class="d"></tspan><tspan class="m"> 41.3%</tspan></text>
+<text x="635.0" y="158.0" xml:space="preserve" textLength="319.2" lengthAdjust="spacing"><tspan class="k">TypeScript      </tspan><tspan class="p">███████████</tspan><tspan class="d">░░░░░</tspan><tspan class="m"> 28.6%</tspan></text>
+<text x="635.0" y="174.8" xml:space="preserve" textLength="319.2" lengthAdjust="spacing"><tspan class="k">Python          </tspan><tspan class="p">█████████</tspan><tspan class="d">░░░░░░░</tspan><tspan class="m"> 22.3%</tspan></text>
+<text x="635.0" y="191.6" xml:space="preserve" textLength="319.2" lengthAdjust="spacing"><tspan class="k">Java            </tspan><tspan class="p">██</tspan><tspan class="d">░░░░░░░░░░░░░░</tspan><tspan class="m">  4.6%</tspan></text>
+<text x="635.0" y="208.4" xml:space="preserve" textLength="319.2" lengthAdjust="spacing"><tspan class="k">Shell           </tspan><tspan class="p">█</tspan><tspan class="d">░░░░░░░░░░░░░░░</tspan><tspan class="m">  2.0%</tspan></text>
 <text x="24" y="247.9" xml:space="preserve" textLength="16.8" lengthAdjust="spacing"><tspan class="p">$ </tspan></text>
 <rect class="cursor" x="40.8" y="235.9" width="8.4" height="16"/>
 </svg>
