@@ -28,6 +28,11 @@ class ThemeColors:
     muted: str
     add: str
     delete: str
+    # Contribution-heatmap ramp, empty -> busiest (defaults match the dark
+    # theme; the light theme overrides these in config.json).
+    heat: list[str] = field(
+        default_factory=lambda: ["#161b22", "#1c2f4e", "#2c4a7c", "#4a76bd", "#70a5fd"]
+    )
 
 
 @dataclass(frozen=True)
@@ -134,12 +139,23 @@ class Config:
     themes: dict[str, ThemeColors]
     quotes: list[str] = field(default_factory=list)
     loc: dict[str, Any] = field(default_factory=dict)
+    projects: list[dict[str, str]] = field(default_factory=list)
 
 
 def load_config(path: Path | str) -> Config:
     """Load and validate config.json into typed dataclasses."""
     raw = json.loads(Path(path).read_text(encoding="utf-8"))
     try:
+        themes = {name: ThemeColors(**colors) for name, colors in raw["themes"].items()}
+        for name, theme in themes.items():
+            if len(theme.heat) != 5:
+                raise SystemExit(
+                    f"config.json is invalid: themes.{name}.heat needs exactly 5 colors "
+                    f"(got {len(theme.heat)})"
+                )
+        projects = raw.get("projects", [])
+        for project in projects:
+            project["name"]  # required; a KeyError here becomes the clean exit below
         return Config(
             username=raw["username"],
             display_name=raw["display_name"],
@@ -148,17 +164,18 @@ def load_config(path: Path | str) -> Config:
             fields=raw.get("fields", {}),
             ascii=AsciiParams(**raw["ascii"]),
             svg=SvgParams(**raw["svg"]),
-            themes={name: ThemeColors(**colors) for name, colors in raw["themes"].items()},
+            themes=themes,
             quotes=raw.get("quotes", []),
             loc=raw.get("loc", {}),
+            projects=projects,
         )
     except (KeyError, TypeError) as exc:
         raise SystemExit(f"config.json is invalid: {exc}") from exc
 
 
 def esc(text: str) -> str:
-    """XML-escape text destined for an SVG."""
-    return escape(text)
+    """XML-escape text destined for an SVG (content or attribute value)."""
+    return escape(text, {'"': "&quot;"})
 
 
 def format_int(n: int) -> str:

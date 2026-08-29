@@ -47,6 +47,9 @@ query($login: String!, $cursor: String) {
       nodes {
         nameWithOwner isFork stargazerCount
         defaultBranchRef { target { ... on Commit { oid } } }
+        languages(first: 10, orderBy: {field: SIZE, direction: DESC}) {
+          edges { size node { name } }
+        }
       }
     }
   }
@@ -57,7 +60,12 @@ QUERY_CONTRIBUTIONS = """
 query($login: String!) {
   user(login: $login) {
     contributionsCollection {
-      contributionCalendar { totalContributions }
+      contributionCalendar {
+        totalContributions
+        weeks {
+          contributionDays { date weekday contributionCount contributionLevel }
+        }
+      }
     }
   }
 }
@@ -85,6 +93,12 @@ class GraphQLError(Exception):
     """The API returned errors or an unusable payload."""
 
 
+# What collect_stats treats as "this fetch group failed, keep the cache":
+# network/API errors plus any unexpected response shape (the daily build
+# must degrade, never crash, on API surprises).
+FETCH_ERRORS = (GraphQLError, KeyError, TypeError, AttributeError)
+
+
 def graphql(query: str, variables: dict[str, Any], token: str) -> dict[str, Any]:
     """POST one GraphQL query, retrying transient failures with backoff."""
     body = json.dumps({"query": query, "variables": variables}).encode()
@@ -102,7 +116,10 @@ def graphql(query: str, variables: dict[str, Any], token: str) -> dict[str, Any]
         try:
             with urllib.request.urlopen(request, timeout=30) as response:
                 payload = json.load(response)
-            if payload.get("data"):
+            # Partial failures come back as HTTP 200 with both data and an
+            # errors array (nulled-out nodes); treat them as failures so the
+            # caller degrades to cache instead of tripping on the holes.
+            if payload.get("data") and not payload.get("errors"):
                 return payload["data"]
             raise GraphQLError(str(payload.get("errors", "empty response")))
         except urllib.error.HTTPError as exc:
@@ -121,7 +138,7 @@ def fetch_user(username: str, token: str) -> dict[str, Any]:
 
 
 def fetch_repos(username: str, token: str) -> tuple[int, list[dict[str, Any]]]:
-    """(total repo count, [{name, is_fork, stars, head_oid}, ...])."""
+    """(total repo count, [{name, is_fork, stars, head_oid, languages}, ...])."""
     repos: list[dict[str, Any]] = []
     cursor: str | None = None
     total = 0
@@ -130,14 +147,18 @@ def fetch_repos(username: str, token: str) -> tuple[int, list[dict[str, Any]]]:
         block = data["user"]["repositories"]
         total = block["totalCount"]
         for node in block["nodes"]:
+            if not node:  # a resolver hiccup can null individual entries
+                continue
             branch = node.get("defaultBranchRef") or {}
             target = branch.get("target") or {}
+            edges = (node.get("languages") or {}).get("edges") or []
             repos.append(
                 {
                     "name": node["nameWithOwner"],
                     "is_fork": node["isFork"],
                     "stars": node["stargazerCount"],
                     "head_oid": target.get("oid"),
+                    "languages": {e["node"]["name"]: e["size"] for e in edges},
                 }
             )
         if not block["pageInfo"]["hasNextPage"]:
@@ -145,17 +166,33 @@ def fetch_repos(username: str, token: str) -> tuple[int, list[dict[str, Any]]]:
         cursor = block["pageInfo"]["endCursor"]
 
 
-def fetch_contributions(username: str, token: str) -> int:
-    """Contributions over the last year, matching the profile graph.
+def fetch_contributions(username: str, token: str) -> tuple[int, list[dict[str, Any]]]:
+    """(contributions over the last year, calendar weeks), as on the profile.
 
     The calendar total is exactly the number GitHub shows on the profile;
     private activity is included when the token (or the user's "private
     contributions" profile setting) allows it. Do NOT add
-    restrictedContributionsCount on top — that double-counts.
+    restrictedContributionsCount on top — that double-counts. The weeks
+    carry GitHub's own per-day quartile bucketing for the heatmap panel.
     """
     data = graphql(QUERY_CONTRIBUTIONS, {"login": username}, token)
     calendar = data["user"]["contributionsCollection"]["contributionCalendar"]
-    return calendar["totalContributions"]
+    return calendar["totalContributions"], calendar["weeks"]
+
+
+def aggregate_languages(
+    repos: list[dict[str, Any]], loc_config: dict[str, Any]
+) -> dict[str, int]:
+    """Byte totals per language, honoring the same exclusions as LOC."""
+    include_forks = bool(loc_config.get("include_forks", False))
+    excluded = set(loc_config.get("exclude_repos", []))
+    totals: dict[str, int] = {}
+    for repo in repos:
+        if repo["name"] in excluded or (repo["is_fork"] and not include_forks):
+            continue
+        for name, size in repo.get("languages", {}).items():
+            totals[name] = totals.get(name, 0) + size
+    return totals
 
 
 def scan_repo_loc(
@@ -225,6 +262,21 @@ def _read_json(path: Path) -> dict[str, Any]:
         return {}
 
 
+def load_panel_data(generated_dir: Path) -> tuple[list[dict[str, Any]], dict[str, int]]:
+    """(calendar weeks, language byte totals) from the panels cache.
+
+    The cache is written by collect_stats() and deliberately contains no
+    repository names, so it is always safe to commit.
+    """
+    cache = _read_json(generated_dir / "panels_cache.json")
+    return cache.get("calendar", []), cache.get("languages", {})
+
+
+def load_loc_cache(generated_dir: Path) -> dict[str, Any]:
+    """Per-repo {commits, additions, deletions} from the LOC cache."""
+    return _read_json(generated_dir / "loc_cache.json").get("repos", {})
+
+
 def _stats_from_cache(cache: dict[str, Any], config: Config) -> Stats:
     known = {f for f in Stats.__dataclass_fields__}
     stats = Stats(**{k: v for k, v in cache.items() if k in known})
@@ -250,6 +302,8 @@ def collect_stats(
     stats = _stats_from_cache(snapshot, config)
     stats.partial = False
     user_id = ""
+    panels_path = generated_dir / "panels_cache.json"
+    panels = _read_json(panels_path)
 
     try:
         user = fetch_user(config.username, token)
@@ -258,7 +312,7 @@ def collect_stats(
         stats.created_at = user["createdAt"]
         stats.followers = user["followers"]["totalCount"]
         stats.contributed = user["repositoriesContributedTo"]["totalCount"]
-    except GraphQLError as exc:
+    except FETCH_ERRORS as exc:
         print(f"stats: user query failed ({exc}), keeping cache", file=sys.stderr)
         stats.partial = True
 
@@ -266,15 +320,21 @@ def collect_stats(
     try:
         stats.repos, repos = fetch_repos(config.username, token)
         stats.stars = sum(r["stars"] for r in repos)
-    except GraphQLError as exc:
+        panels["languages"] = aggregate_languages(repos, config.loc)
+    except FETCH_ERRORS as exc:
         print(f"stats: repo query failed ({exc}), keeping cache", file=sys.stderr)
         stats.partial = True
 
     try:
-        stats.contributions_year = fetch_contributions(config.username, token)
-    except GraphQLError as exc:
+        stats.contributions_year, panels["calendar"] = fetch_contributions(
+            config.username, token
+        )
+    except FETCH_ERRORS as exc:
         print(f"stats: contribution query failed ({exc}), keeping cache", file=sys.stderr)
         stats.partial = True
+
+    panels["version"] = 1
+    panels_path.write_text(json.dumps(panels, indent=2) + "\n", encoding="utf-8")
 
     loc_cache = _read_json(loc_cache_path).get("repos", {})
     if repos and user_id:
@@ -284,7 +344,7 @@ def collect_stats(
                 json.dumps({"version": 1, "repos": loc_cache}, indent=2) + "\n",
                 encoding="utf-8",
             )
-        except GraphQLError as exc:
+        except FETCH_ERRORS as exc:
             print(f"stats: loc scan failed ({exc}), keeping cache", file=sys.stderr)
             stats.partial = True
     if loc_cache:

@@ -66,7 +66,8 @@
       "cursor": "#70a5fd",
       "muted": "#8b949e",
       "add": "#3fb950",
-      "delete": "#f85149"
+      "delete": "#f85149",
+      "heat": ["#161b22", "#1c2f4e", "#2c4a7c", "#4a76bd", "#70a5fd"]
     },
     "light": {
       "bg": "#ffffff",
@@ -82,9 +83,42 @@
       "cursor": "#0969da",
       "muted": "#57606a",
       "add": "#1a7f37",
-      "delete": "#cf222e"
+      "delete": "#cf222e",
+      "heat": ["#ebedf0", "#c4d7f2", "#8ab4e8", "#4589d6", "#0969da"]
     }
   },
+  "projects": [
+    {
+      "name": "citepdf/",
+      "repo": "rudraymehra/citepdf",
+      "tag": "Python · RAG",
+      "tagline": "citation-first PDF RAG — RAPTOR tree, contextual retrieval, hybrid Qdrant search"
+    },
+    {
+      "name": "http-server/",
+      "repo": "rudraymehra/HTTP-SERVER",
+      "tag": "Java · systems",
+      "tagline": "production-style HTTP server from scratch — multi-threading, security controls, monitoring"
+    },
+    {
+      "name": "ai-cli-agent/",
+      "repo": "rudraymehra/AI-CLI-AGENT",
+      "tag": "TypeScript · agents",
+      "tagline": "Gemini agent on a strict THINK → TOOL → OBSERVE loop, streaming every step live"
+    },
+    {
+      "name": "reviewbot/",
+      "repo": "rudraymehra/reviewbot",
+      "tag": "Python · automation",
+      "tagline": "Claude-powered PR reviewer — inline fixes, severity tags, adversarial verify pass"
+    },
+    {
+      "name": "rudraymehra/",
+      "repo": "rudraymehra/rudraymehra",
+      "tag": "Python · generative",
+      "tagline": "this page — ASCII renderer, GraphQL stats, SVG compositor; redrawn daily, no templates"
+    }
+  ],
   "quotes": [
     "Talk is cheap. Show me the code.",
     "Programs must be written for people to read.",

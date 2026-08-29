@@ -95,6 +95,24 @@ value is right-aligned, and each `<text>` row carries
 `textLength`/`lengthAdjust` so browsers enforce the exact grid width even
 under font fallback.
 
+## Panels
+
+Below the hero, `generate_panels.py` renders two more windows with the
+same chrome (`window_frame`), row engine (`render_lines`), and palette:
+
+- **projects** (`projects_{theme}.svg`) — `$ ls ~/projects` with curated
+  cards from `config.json`'s `projects` array, enriched with per-repo
+  commit/LOC tails read from the committed `loc_cache.json` (tails are
+  suppressed below 5 commits). Zero extra API calls.
+- **activity** (`activity_{theme}.svg`) — `$ ./activity.sh --last-year`
+  with a contribution heatmap (one `<rect>` per day, GitHub's own
+  quartile levels, themed `heat` ramp) beside top-language share bars in
+  block characters, closed by the session's final blinking cursor.
+
+Both are driven by `panels_cache.json` (calendar weeks + aggregated
+language bytes, written by `collect_stats`). The cache deliberately
+contains **no repository names**, so it is always safe to commit.
+
 ## Automation
 
 ```mermaid
