@@ -31,6 +31,6 @@
 <text x="24.0" y="225.2" xml:space="preserve" textLength="705.6" lengthAdjust="spacing"><tspan class="d">  └─ </tspan><tspan class="t">Gemini agent on a strict THINK → TOOL → OBSERVE loop, streaming every step live</tspan></text>
 <text x="24.0" y="258.8" xml:space="preserve" textLength="554.4" lengthAdjust="spacing"><tspan class="d">  </tspan><tspan class="b">reviewbot/        </tspan><tspan class="k">Python · automation     </tspan><tspan class="m">20 commits · +3.3k LOC</tspan></text>
 <text x="24.0" y="275.6" xml:space="preserve" textLength="722.4" lengthAdjust="spacing"><tspan class="d">  └─ </tspan><tspan class="t">Claude-powered PR reviewer — inline fixes, severity tags, adversarial verify pass</tspan></text>
-<text x="24.0" y="309.2" xml:space="preserve" textLength="554.4" lengthAdjust="spacing"><tspan class="d">  </tspan><tspan class="b">rudraymehra/      </tspan><tspan class="k">Python · generative     </tspan><tspan class="m">17 commits · +7.2k LOC</tspan></text>
+<text x="24.0" y="309.2" xml:space="preserve" textLength="554.4" lengthAdjust="spacing"><tspan class="d">  </tspan><tspan class="b">rudraymehra/      </tspan><tspan class="k">Python · generative     </tspan><tspan class="m">18 commits · +7.3k LOC</tspan></text>
 <text x="24.0" y="326.0" xml:space="preserve" textLength="764.4" lengthAdjust="spacing"><tspan class="d">  └─ </tspan><tspan class="t">this page — ASCII renderer, GraphQL stats, SVG compositor; redrawn daily, no templates</tspan></text>
 </svg>
