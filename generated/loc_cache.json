@@ -98,7 +98,7 @@
       "deletions": 227
     },
     "rudraymehra/rudraymehra": {
-      "head_oid": "b856415ad86631d993f1f02ba3b008a501b3b769",
+      "head_oid": "41c3e20c3a21370986f2f3bb68bbff8013066e22",
       "commits": 18,
       "additions": 7342,
       "deletions": 1278
@@ -168,6 +168,12 @@
       "commits": 6,
       "additions": 12829,
       "deletions": 113
+    },
+    "rudraymehra/CV_edge_detection": {
+      "head_oid": "8f795fc7ee7f47a21d334b5bd0ce7d1bd17ee44c",
+      "commits": 1,
+      "additions": 5422,
+      "deletions": 0
     }
   }
 }
