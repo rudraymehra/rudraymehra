@@ -98,7 +98,7 @@
       "deletions": 227
     },
     "rudraymehra/rudraymehra": {
-      "head_oid": "f56cf0dda87acbd4a0242f7c04fe27e41ad0ac4b",
+      "head_oid": "d14030fba9aa9c687e115ff990ad428a3970208d",
       "commits": 18,
       "additions": 7342,
       "deletions": 1278
@@ -180,6 +180,12 @@
       "commits": 1,
       "additions": 11151,
       "deletions": 0
+    },
+    "rudraymehra/rocm-pytorch-bake": {
+      "head_oid": "b82e0a406f0167a84b888c22c5445b3a55239695",
+      "commits": 3,
+      "additions": 424,
+      "deletions": 50
     }
   }
 }
