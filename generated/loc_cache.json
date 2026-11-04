@@ -98,7 +98,7 @@
       "deletions": 227
     },
     "rudraymehra/rudraymehra": {
-      "head_oid": "f392d7780c1aa2402addc064dfb21921acb8da0b",
+      "head_oid": "1ab14c03150c506d95521814294e4ef837d7cff3",
       "commits": 18,
       "additions": 7342,
       "deletions": 1278
@@ -186,12 +186,6 @@
       "commits": 3,
       "additions": 424,
       "deletions": 50
-    },
-    "rudraymehra/git-login-assignment": {
-      "head_oid": "9c96f4da23c07276c1a47af75bca92b615dc549c",
-      "commits": 8,
-      "additions": 112,
-      "deletions": 4
     }
   }
 }
