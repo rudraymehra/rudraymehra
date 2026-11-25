@@ -1,16 +1,16 @@
 {
   "languages": {
-    "JavaScript": 2030963,
-    "CSS": 102705,
+    "JavaScript": 2034137,
+    "CSS": 106543,
     "HTML": 18898,
-    "TypeScript": 1403460,
+    "TypeScript": 1846817,
     "Java": 223840,
     "Jupyter Notebook": 765260,
-    "Dockerfile": 7048,
-    "Shell": 102645,
+    "Dockerfile": 8310,
+    "Shell": 108002,
     "Python": 1851836,
     "TeX": 5273,
-    "Rust": 37393,
+    "Rust": 159814,
     "Batchfile": 11023,
     "Makefile": 2270
   },
@@ -2424,6 +2424,12 @@
         {
           "date": "2026-11-24",
           "weekday": 2,
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-11-25",
+          "weekday": 3,
           "contributionCount": 0,
           "contributionLevel": "NONE"
         }
